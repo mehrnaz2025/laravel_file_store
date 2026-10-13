@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Admin\Content;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Content\Menu;
 use Illuminate\Http\Request;
 
-class MenuController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+class MenuController extends Controller{
+
+    public function index() {
+
+        $menus=Menu::query()->latest()->paginate(5);
+        return view('admin.content.menu.index',compact('menus'));
     }
 
     /**

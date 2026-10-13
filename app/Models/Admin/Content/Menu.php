@@ -5,6 +5,7 @@ namespace App\Models\Admin\Content;
 use Dyrynda\Database\Support\CascadeSoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 use Morilog\Jalali\CalendarUtils;
 use Morilog\Jalali\Jalalian;
 
@@ -20,7 +21,7 @@ class Menu extends Model{
      //پیاده سازی روابط مورد نیار
 
      public function parent(){
-         return $this->belongsTo(Menu::class,'parent_id')->default(['name'=>'منوی اصلی']);
+         return $this->belongsTo(Menu::class,'parent_id')->withDefault(['name'=>'منوی اصلی']);
       }
 
      public function children(){
@@ -40,6 +41,26 @@ class Menu extends Model{
            return CalendarUtils::convertNumbers($persian);
       }
 
+
+
+
+     //پیاده سازی اسکوپ برای نمیش انواع وضعیت های منو
+
+        public function scopeActiveMenu(Builder $query): Builder{
+           return $query->where('status', 1);
+         }
+
+
+
+        public function scopeInactiveMenu(Builder $query): Builder{
+            return $query->where('status', 0);
+        }
+
+
+
+        public function scopeAllMenu(Builder $query): Builder{
+            return $query;
+        }
 
 
 

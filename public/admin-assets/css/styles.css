@@ -1156,3 +1156,71 @@ tbody tr:hover { background: rgba(212,175,55,0.05); }
   color: #58d68d;
   border-color: #2ecc71;
 }
+
+
+
+
+
+
+
+/* ===== SIDEBAR GROUPS ===== */
+.sidebar-group-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px 8px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-top: 1px solid rgba(212,175,55,0.15);
+  position: relative;
+}
+
+.sidebar-group-title:first-of-type {
+  margin-top: 10px;
+}
+
+.group-icon {
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(192,192,192,0.08));
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.group-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* آیتم‌های داخل گروه کمی تورفتگی داشته باشن */
+.sidebar-group-title ~ .menu-item {
+  padding-right: 35px;
+  font-size: 13px;
+}
+
+/* هاور روی عنوان گروه */
+.sidebar-group-title:hover .group-icon {
+  background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(192,192,192,0.15));
+  border-color: var(--gold);
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+/* ریسپانسیو */
+@media(max-width:768px){
+  .sidebar-group-title {
+    display: none;
+  }
+  .sidebar-group-title ~ .menu-item {
+    padding-right: 12px;
+  }
+}
