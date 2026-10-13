@@ -5,10 +5,10 @@
         <p>فروشگاه فایل الماس </p>
       </div>
       <nav>
-        <div class="menu-item">
-          <span class="icon">📊</span>
-          <span>داشبورد</span>
-        </div>
+      <div class="menu-item">
+        <span class="icon">📊</span>
+        <a href="{{route('admin.dashboard')}}"  style="text-decoration: none ; color:antiquewhite">داشبورد</a>
+      </div>
 
       </nav>
     </aside>
