@@ -15,6 +15,7 @@ return new class extends Migration{
                 $table->tinyInteger('status')->default(0);
                 $table->string('icon')->nullable();
                 $table->foreignId('parent_id')->nullable('')->constrained('menus')->cascadeOnDelete()->cascadeOnUpdate();
+                $table->softDeletes();
                 $table->timestamps();
             });
     }
