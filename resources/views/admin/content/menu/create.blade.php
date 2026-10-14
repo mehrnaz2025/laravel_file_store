@@ -34,7 +34,7 @@
                             <select class="form-select" name="parent_id">
                                 <option value=""> منوی والد</option>
                                 @foreach ($menus as  $menu)
-                                     <option value="{{$menu->id}}"> {{$menu->name}}  </option>
+                                     <option value="{{$menu->id}}"   @if (old('parent_id') == $menu->id) selected @endif> {{$menu->name}}  </option>
                                 @endforeach
                             </select>
                             @error('parent_id')
@@ -54,10 +54,10 @@
                         </div>
 
                        <div class="mb-3 col col-md-4">
-                            <label class="form-label">وضعیت</label>
+                            <label class="form-label">موقعیت</label>
                             <select class="form-select" name="order">
-                                <option value="0"  @if(old('status') == 0)  selected @endif>  هدر</option>
-                                <option value="1"  @if(old('status') == 1)  selected @endif> فوتر</option>
+                                <option value="0"  @if(old('order') == 0)  selected @endif>  هدر</option>
+                                <option value="1"  @if(old('order') == 1)  selected @endif> فوتر</option>
                             </select>
                             @error('order')
                                  <div class="p-1 my-2 text-danger rounded "><strong>{{$message}}</strong></div>

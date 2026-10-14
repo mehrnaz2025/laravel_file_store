@@ -23,7 +23,9 @@ class MenuController extends Controller{
 
 
     public function store(MenuRequest $request){
-        dd($request->all());
+          $inputs=$request->all();
+          Menu::query()->create($inputs);
+          return to_route('admin.content.menu.index');
     }
 
 

@@ -51,8 +51,9 @@
                     </thead>
                     <tbody>
 
-                        @forelse ($menus as  $menu)
+                        @forelse ($menus as  $key=>$menu)
                             <tr data-status="success" style="">
+                                <td>{{$menus->firstItem() + $key}}</td>
                                 <td> {{ $menu->name }} </td>
                                 <td> {{ $menu->parent->name }} </td>
                                 <td> {{ $menu->url }} </td>
@@ -66,7 +67,7 @@
                                 </td>
                                 <td>{{ $menu->create }}</td>
                                 <td class="actions">
-                                    <a href="{{route('admin.content.menu.edit')}}" class="btn-gold btn-gold-sm">&#x270F;</a>
+                                    <a href="{{route('admin.content.menu.edit',$menu)}}" class="btn-gold btn-gold-sm">&#x270F;</a>
                                     <form action="{{ route('admin.content.menu.destroy',$menu) }}" method="post">
                                             @csrf
                                             @method('DELETE')
@@ -85,6 +86,11 @@
                     </tbody>
                 </table>
             </div>
+                   <div class="row">
+            <div class="d-flex col-12 justify-content-center w-100 mt-3">
+                    {{$menus->links()}}
+            </div>
+        </div>
         </div>
     </section>
 
