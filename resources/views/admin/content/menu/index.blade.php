@@ -10,7 +10,7 @@
                 <a href="{{ route('admin.content.menu.create') }}" class="btn-gold">➕ ایجاد منو</a>
             </div>
             <div class="search-container">
-                <input type="text" class="search-input" placeholder="جستجو در پرداخت‌ها..."
+                <input type="text" class="search-input" placeholder="جستجو در منوها..."
                     onkeyup="searchTable('payments-table', this.value)">
             </div>
 
@@ -52,24 +52,29 @@
                     <tbody>
 
                         @forelse ($menus as  $menu)
-                               tr data-status="success" style="">
-                                    <td> {{ $menu->name }} </td>
-                                    <td> {{ $menu->parent->name }} </td>
-                                    <td> {{ $menu->url }} </td>
+                            <tr data-status="success" style="">
+                                <td> {{ $menu->name }} </td>
+                                <td> {{ $menu->parent->name }} </td>
+                                <td> {{ $menu->url }} </td>
 
-                                    <td>
-                                        @if ( $menu->status == 1)
-                                             <span class="badge-gold bg-success-g">موفق</span>
-                                         @else
-                                            <span class="badge-gold bg-danger-g">ناموفق</span>
-                                        @endif
-                                    </td>
-                                    <td>{{ $menu->create }}</td>
-                                    <td class="actions">
-                                        <a href="{{route('admin.content.menu.edit')}}" class="btn-gold btn-gold-sm">&#x270F;</a>
-                                        <button  type="submit" class="btn-gold btn-gold-sm btn-gold-danger" style="font-size: 20px">&#x1F5D1;</button>
-                                    </td>
-                                </tr>
+                                <td>
+                                    @if ( $menu->status == 1)
+                                            <span class="badge-gold bg-success-g">موفق</span>
+                                        @else
+                                        <span class="badge-gold bg-danger-g">ناموفق</span>
+                                    @endif
+                                </td>
+                                <td>{{ $menu->create }}</td>
+                                <td class="actions">
+                                    <a href="{{route('admin.content.menu.edit')}}" class="btn-gold btn-gold-sm">&#x270F;</a>
+                                    <form action="{{ route('admin.content.menu.destroy',$menu) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                           <button  type="submit" class="btn-gold btn-gold-sm btn-gold-danger" style="font-size: 20px">&#x1F5D1;</button>
+                                    </form>
+
+                                </td>
+                            </tr>
                         @empty
                                <tr>
                                    <td colspan="7"> <div class="alert alert-secodary text-center text-white font-bold" style="font-size: 15px"> هیچ داده ای وجود ندارد </div></td>
