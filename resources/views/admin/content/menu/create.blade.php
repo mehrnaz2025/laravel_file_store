@@ -22,7 +22,7 @@
 
                        <div class="mb-3 col col-md-8">
                             <label class="form-label">  آدرس </label>
-                            <input type="text" class="form-control" name="url" value="{{old('url')}}">
+                            <input type="text" class="form-control" name="url" value="{{old('url')}}" placeholder="https://example.com">
                             @error('url')
                                 <div class="p-1 my-1 text-danger rounded "><strong>{{$message}}</strong></div>
                             @enderror

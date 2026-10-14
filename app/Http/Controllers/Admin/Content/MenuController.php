@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Content;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Content\MenuRequest;
 use App\Models\Admin\Content\Menu;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class MenuController extends Controller{
     }
 
 
-    public function store(Request $request){
+    public function store(MenuRequest $request){
         dd($request->all());
     }
 
