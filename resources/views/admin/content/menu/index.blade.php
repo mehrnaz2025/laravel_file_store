@@ -21,7 +21,7 @@
                     <span>همه منوها</span>
                     <span class="btn-count">   {{  App\Models\Admin\Content\Menu::allMenu()->count()  }}  </span>
                 </a>
-                <a href="{{ route('admin.content.menu.active-menu') }}" class="status-btn active" data-filter="success" onclick="filterByStatus(this, '')"
+                <a href="{{ route('admin.content.menu.active-menu') }}" class="status-btn" data-filter="success" onclick="filterByStatus(this, '')"
                     style="text-decoration: none;">
                     <span class="btn-icon">✓</span>
                     <span>فعال</span>
@@ -68,10 +68,11 @@
                                 <td>{{ $menu->create }}</td>
                                 <td class="actions">
                                     <a href="{{route('admin.content.menu.edit',$menu)}}" class="btn-gold btn-gold-sm" style="font-size: 16px;">&#x270F;</a>
-                                    <form action="{{ route('admin.content.menu.destroy',$menu) }}" method="post">
+                                    <form action="{{ route('admin.content.menu.destroy',$menu) }}" method="post" class="delete-form">
                                             @csrf
                                             @method('DELETE')
-                                           <button  type="submit" class="btn-gold btn-gold-sm btn-gold-danger" style="font-size: 20px">&#x1F5D1;</button>
+
+                                           <button  type="submit" class="btn-gold btn-gold-sm btn-gold-danger  delete-btn" style="font-size: 20px">&#x1F5D1;</button>
                                     </form>
 
                                 </td>

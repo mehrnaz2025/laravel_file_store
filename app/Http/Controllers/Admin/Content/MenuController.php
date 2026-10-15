@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Content;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Content\MenuRequest;
 use App\Models\Admin\Content\Menu;
-use Illuminate\Http\Request;
+
 
 class MenuController extends Controller{
 
@@ -25,7 +25,7 @@ class MenuController extends Controller{
     public function store(MenuRequest $request){
           $inputs=$request->all();
           Menu::query()->create($inputs);
-          return to_route('admin.content.menu.index');
+          return to_route('admin.content.menu.index')->with('success','منو با موفقت ایجاد شد');
     }
 
 
@@ -45,13 +45,13 @@ class MenuController extends Controller{
     public function update(MenuRequest $request,Menu $menu){
             $inputs=$request->all();
             $menu->update($inputs);
-            return to_route('admin.content.menu.index');
+            return to_route('admin.content.menu.index')->with('success','منو با موفقت ایجاد شد');
     }
 
 
     public function destroy(Menu $menu){
             $menu->delete();
-             return to_route('admin.content.menu.index');
+             return to_route('admin.content.menu.index')->with('success','منو با موفقت حذف شد');
     }
 
 
