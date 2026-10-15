@@ -27,7 +27,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
        Route::get('/',DashboardCotroller::class)->name('dashboard');
 
        Route::prefix('content')->name('content.')->group(function(){
+
                Route::resource('menu', MenuController::class);
+               Route::get('/active-menu',[MenuController::class,'activeStatus'])->name('menu.active-menu');
+               Route::get('/inactive-menu',[MenuController::class,'inactiveStatus'])->name('menu.inactive-menu');
 
        });
 

@@ -53,4 +53,18 @@ class MenuController extends Controller{
             $menu->delete();
              return to_route('admin.content.menu.index');
     }
+
+
+    public function activeStatus(){
+         $menus=Menu::activeMenu()->latest()->paginate(5);
+         return view('admin.content.menu.index',compact('menus'));
+    }
+
+        public function inactiveStatus(){
+         $menus=Menu::inactiveMenu()->latest()->paginate(5);
+         return view('admin.content.menu.index',compact('menus'));
+    }
+
+
+
 }
