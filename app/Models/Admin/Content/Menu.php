@@ -14,7 +14,7 @@ class Menu extends Model{
 
      protected $table="menus";
      protected $guarded =['id'];
-     protected $cascadeSoftDeletes=['children'];
+     protected $cascadeDeletes=['children'];
 
 
 

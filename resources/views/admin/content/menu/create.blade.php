@@ -33,9 +33,12 @@
                             <label class="form-label">انتخاب  منو</label>
                             <select class="form-select" name="parent_id">
                                 <option value=""> منوی والد</option>
-                                @foreach ($menus as  $menu)
+                                @forelse ($menus as  $menu)
                                      <option value="{{$menu->id}}"   @if (old('parent_id') == $menu->id) selected @endif> {{$menu->name}}  </option>
-                                @endforeach
+                                @empty
+
+                                @endforelse
+    
                             </select>
                             @error('parent_id')
                                 <div class="p-1 my-2 text-danger rounded "><strong>{{$message}}</strong></div>
