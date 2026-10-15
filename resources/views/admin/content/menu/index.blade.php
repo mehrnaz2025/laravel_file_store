@@ -67,7 +67,7 @@
                                 </td>
                                 <td>{{ $menu->create }}</td>
                                 <td class="actions">
-                                    <a href="{{route('admin.content.menu.edit',$menu)}}" class="btn-gold btn-gold-sm">&#x270F;</a>
+                                    <a href="{{route('admin.content.menu.edit',$menu)}}" class="btn-gold btn-gold-sm" style="font-size: 16px;">&#x270F;</a>
                                     <form action="{{ route('admin.content.menu.destroy',$menu) }}" method="post">
                                             @csrf
                                             @method('DELETE')

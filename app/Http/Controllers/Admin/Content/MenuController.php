@@ -35,15 +35,16 @@ class MenuController extends Controller{
     }
 
 
-    public function edit(string $id)
-    {
-        //
+    public function edit(Menu $menu){
+         $parentMenus=Menu::query()->where('parent_id',null)->get()->except($menu->id);
+         return  view('admin.content.menu.edit',compact('menu','parentMenus'));
     }
 
 
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(MenuRequest $request,Menu $menu){
+            $inputs=$request->all();
+            $menu->update($inputs);
+            return to_route('admin.content.menu.index');
     }
 
 
