@@ -13,6 +13,7 @@ return new class extends Migration{
             $table->text('description')->nullable();
             $table->text('keywords')->nullable();
             $table->text('icon')->nullable();
+            $table->text('logo')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

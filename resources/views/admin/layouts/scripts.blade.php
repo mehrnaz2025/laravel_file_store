@@ -21,6 +21,28 @@
             }
         });
 
+
+        @if (session('success'))
+            Swal.fire({
+                title: 'خطا',
+                text: '{{ session('error') }}',
+                icon: 'error',
+                confirmButtonText: 'باشه',
+                confirmButtonColor: '#10b981',
+                timer: 3000,
+                timerProgressBar: true,
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                customClass: {
+                    popup: 'text-right'
+                }
+            });
+        @endif
+
+
+
+
         // نمایش پیام موفقیت
 
         @if (session('success'))
@@ -40,16 +62,6 @@
                 }
             });
         @endif
-
-
-
-
-
-
-
-
-
-
 
 
 

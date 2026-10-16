@@ -25,7 +25,6 @@
                             <th> کلمات کلیدی </th>
                             <th>لوگو</th>
                             <th>آیکون</th>
-                            <th>تنظیمات</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,10 +36,10 @@
                                 <td>{{ Str::limit($setting->description, 50) }}</td>
                                 <td>{{ Str::limit($setting->keywords, 50) }}</td>
                                 <td>
-                                    <img src="{{ asset($setting->logo) }}" alt="" width="100" height="100">
+                                    <img src="{{ asset($setting->logo) }}" alt="" width="100" height="60">
                                 </td>
                                 <td>
-                                    <img src="{{ asset($setting->icon) }}" alt="" width="100" height="100">
+                                        <img src="{{ asset($setting->icon) }}" alt="" width="100" height="60">
                                 </td>
                             </tr>
                         @else
