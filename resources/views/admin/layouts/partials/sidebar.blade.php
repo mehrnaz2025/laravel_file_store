@@ -22,5 +22,20 @@
                 <a href="{{ route('admin.content.menu.index') }}" style="text-decoration: none ; color:antiquewhite">منوها</a>
             </div>
 
-    </nav>
+
+             <!--  بخش تنظیمات  -->
+            <div class="sidebar-group-title">
+                <span class="group-icon"  style="font-size: 20px;">&#9965;</span>
+                <span class="group-text">بخش تنظیمات</span>
+            </div>
+            <div class="menu-item">
+                <span class="icon">&#9965;</span>
+                <a href="{{ route('admin.setting.index') }}" style="text-decoration: none ; color:antiquewhite;"> تنظیمات  </a>
+            </div>
+
+
+
+
+
+   </nav>
 </aside>
