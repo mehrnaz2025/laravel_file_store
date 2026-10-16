@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Content\MenuController;
 use App\Http\Controllers\Admin\DashboardCotroller;
+use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,11 +27,21 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
        Route::get('/',DashboardCotroller::class)->name('dashboard');
 
+
        Route::prefix('content')->name('content.')->group(function(){
 
                Route::resource('menu', MenuController::class);
                Route::get('/active-menu',[MenuController::class,'activeStatus'])->name('menu.active-menu');
                Route::get('/inactive-menu',[MenuController::class,'inactiveStatus'])->name('menu.inactive-menu');
+
+       });
+
+
+       Route::prefix('setting')->name('setting.')->group(function(){
+
+               Route::get('/', [SettingController::class,'index'])->name('index');
+               Route::get('/set', [SettingController::class,'set'])->name('set');
+               Route::post('/set/store',[SettingController::class,'setStore'])->name('set.store');
 
        });
 
