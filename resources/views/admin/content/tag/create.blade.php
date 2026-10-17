@@ -5,7 +5,7 @@
 
         <div class="">
             <div class="modal-header">
-                <h5 class="">🏷️ افزودن منو</h5>
+                <h5 class="">🏷️ افزودن تگ</h5>
             </div>
             <form action="{{  route('admin.content.tag.store')  }}" method="post">
                 @csrf
