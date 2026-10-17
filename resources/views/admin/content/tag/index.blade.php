@@ -7,7 +7,7 @@
         <div class="glass">
             <div class="section-header">
                 <h3>💳 لیست تگ ها </h3>
-                <a href="{{ route('admin.content.menu.create') }}" class="btn-gold">➕ ایجاد منو</a>
+                <a href="{{ route('admin.content.menu.create') }}" class="btn-gold">➕ ایجاد تگ</a>
             </div>
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="جستجو در تگ ها..."
@@ -73,12 +73,10 @@
                                 <td class="actions">
                                     <a href="{{route('admin.content.tag.edit',$tag)}}" class="btn-gold btn-gold-sm" style="font-size: 16px;">&#x270F;</a>
                                     <form action="{{ route('admin.content.tag.destroy',$tag) }}" method="post" class="delete-form">
-                                            @csrf
-                                            @method('DELETE')
-
-                                           <button  type="submit" class="btn-gold btn-gold-sm btn-gold-danger  delete-btn" style="font-size: 20px">&#x1F5D1;</button>
+                                         @csrf
+                                         @method('DELETE')
+                                         <button  type="submit" class="btn-gold btn-gold-sm btn-gold-danger  delete-btn" style="font-size: 20px">&#x1F5D1;</button>
                                     </form>
-
                                 </td>
                             </tr>
                         @empty
