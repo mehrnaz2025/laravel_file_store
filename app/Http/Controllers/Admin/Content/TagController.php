@@ -44,8 +44,11 @@ class TagController extends Controller{
     }
 
 
-    public function destroy(string $id){
-        //
+    public function destroy(Tag $tag){
+        $tag->delete();
+        return to_route('admin.content.tag.index')->with('success','تگ با موفقت حذف شد');
+
+
     }
 
 
