@@ -34,13 +34,15 @@ class TagController extends Controller{
     }
 
 
-    public function edit(string $id){
-        //
+    public function edit(Tag $tag){
+        return view('admin.content.tag.edit',compact('tag'));
     }
 
 
-    public function update(Request $request, string $id) {
-        //
+    public function update(TagRequest $request,Tag $tag) {
+            $inputs=$request->all();
+            $tag->update($inputs);
+            return to_route('admin.content.tag.index')->with('swal-success',' تگ با موفقیت ویرایش شد');
     }
 
 
@@ -55,13 +57,13 @@ class TagController extends Controller{
 
 
     public function activeStatus(){
-         $tags=Menu::activeTag()->latest()->paginate(5);
+         $tags=Tag::activeTag()->latest()->paginate(5);
          return view('admin.content.tag.index',compact('tags'));
     }
 
 
     public function inactiveStatus(){
-         $tags=Menu::inactivTag()->latest()->paginate(5);
+         $tags=Tag::inactiveTag()->latest()->paginate(5);
          return view('admin.content.tag.index',compact('tags'));
     }
 
