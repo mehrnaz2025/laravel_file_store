@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Content;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Content\TagRequest;
 use App\Models\Admin\Content\Menu;
 use App\Models\Admin\Content\Tag;
 use Illuminate\Http\Request;
@@ -21,8 +22,10 @@ class TagController extends Controller{
     }
 
 
-    public function store(Request $request) {
-       
+    public function store(TagRequest $request) {
+           $inputs=$request->all();
+           Tag::query()->create($inputs);
+           return to_route('admin.content.tag.index')->with('success','تگ با موفقت ایجاد شد');
     }
 
 
