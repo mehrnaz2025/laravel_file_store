@@ -22,6 +22,12 @@
                 <a href="{{ route('admin.content.menu.index') }}" style="text-decoration: none ; color:antiquewhite">منوها</a>
             </div>
 
+            <div class="menu-item">
+                <span class="" style="font-size:25px;color:white;font-weight:bolder ">&#127991;</span>
+                <a href="{{ route('admin.content.tag.index') }}" style="text-decoration: none ;color:antiquewhite">تگ ها</a>
+            </div>
+
+
 
              <!--  بخش تنظیمات  -->
             <div class="sidebar-group-title">
