@@ -7,7 +7,7 @@
         <div class="glass">
             <div class="section-header">
                 <h3>💳 لیست تگ ها </h3>
-                <a href="{{ route('admin.content.menu.create') }}" class="btn-gold">➕ ایجاد تگ</a>
+                <a href="{{ route('admin.content.tag.create') }}" class="btn-gold">➕ ایجاد تگ</a>
             </div>
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="جستجو در تگ ها..."

@@ -17,7 +17,7 @@ class TagController extends Controller{
 
 
     public function create(){
-        //
+         return view('admin.content.tag.create');
     }
 
 
@@ -60,6 +60,6 @@ class TagController extends Controller{
     }
 
 
-    
+
 
 }
