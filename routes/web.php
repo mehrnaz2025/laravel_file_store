@@ -34,7 +34,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::resource('menu', MenuController::class);
                Route::get('/active-menu',[MenuController::class,'activeStatus'])->name('menu.active-menu');
                Route::get('/inactive-menu',[MenuController::class,'inactiveStatus'])->name('menu.inactive-menu');
+
                Route::resource('tag', TagController::class);
+                Route::get('/active-tag',[TagController::class,'activeStatus'])->name('tag.active-tag');
+               Route::get('/inactive-tag',[TagController::class,'inactiveStatus'])->name('tag.inactive-tag');
 
        });
 
