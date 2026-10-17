@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Content\MenuController;
+use App\Http\Controllers\Admin\Content\TagController;
 use App\Http\Controllers\Admin\DashboardCotroller;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::resource('menu', MenuController::class);
                Route::get('/active-menu',[MenuController::class,'activeStatus'])->name('menu.active-menu');
                Route::get('/inactive-menu',[MenuController::class,'inactiveStatus'])->name('menu.inactive-menu');
+               Route::resource('tag', TagController::class);
 
        });
 
