@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Content\BannerController;
 use App\Http\Controllers\Admin\Content\MenuController;
 use App\Http\Controllers\Admin\Content\TagController;
 use App\Http\Controllers\Admin\DashboardCotroller;
@@ -38,6 +39,9 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::resource('tag', TagController::class);
                Route::get('/active-tag',[TagController::class,'activeStatus'])->name('tag.active-tag');
                Route::get('/inactive-tag',[TagController::class,'inactiveStatus'])->name('tag.inactive-tag');
+
+               Route::resource('banner', BannerController::class);
+
 
        });
 
