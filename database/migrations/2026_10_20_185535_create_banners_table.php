@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamp('expire_at')->nullable()->comment('زمان پایان برای تایمر معکوس');
             $table->string('link_url')->nullable();;
             $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('position')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });
