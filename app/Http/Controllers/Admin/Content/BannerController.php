@@ -3,31 +3,25 @@
 namespace App\Http\Controllers\Admin\Content;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Content\Banner;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
+
+    public function index(){
+          $banners=Banner::query()->latest()->paginate(5);
+          return view('admin.content.banner.index',compact('banners'));
+    }
+
+
+    public function create(){
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
+
+    public function store(Request $request){
         //
     }
 

@@ -68,7 +68,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7">
+                                <td colspan="11">
                                     <div class="alert alert-secodary text-center text-white font-bold"
                                         style="font-size: 15px"> هیچ داده ای وجود ندارد </div>
                                 </td>
