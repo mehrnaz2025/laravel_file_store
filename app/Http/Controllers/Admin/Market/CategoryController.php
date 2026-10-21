@@ -53,12 +53,14 @@ class CategoryController extends Controller{
     }
 
     public function activeStatus(){
-
+         $categories=Category::query()->activeCategory()->latest()->paginate(12);
+         return view('admin.market.category.index',compact('categories'));
     }
 
 
     public function inactiveStatus(){
-
+         $categories=Category::query()->inactiveCategory()->latest()->paginate(12);
+         return view('admin.market.category.index',compact('categories'));
     }
 
 
