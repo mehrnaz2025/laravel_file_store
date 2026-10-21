@@ -46,7 +46,9 @@ class CategoryController extends Controller{
      }
 
 
-    public function destroy(string $id){
+    public function destroy(Category $category){
+        $category->delete();
+        return to_route('admin.market.category.index')->with('success','دسته بندی با موفقیت حذف شد');
 
     }
 

@@ -67,13 +67,14 @@
 
                             <td class="actions">
                                 <a href="{{route('admin.market.category.edit',$category)}}" class="btn-gold btn-gold-sm">&#x270F;</a>
-                                <form action="{{route('admin.market.category.destroy',$category)}}" method="post">
+                                    <form action="{{ route('admin.market.category.destroy', $category) }}" method="post" class="delete-form">
                                     @csrf
                                     @method('DELETE')
-                                     <button class="btn-gold btn-gold-sm btn-gold-danger" type="submit">&#x1F5D1;</button>
+                                    <button type="submit" class="btn-gold btn-gold-sm btn-gold-danger delete-btn"
+                                        style="font-size: 20px">&#x1F5D1;</button>
                                 </form>
-
                             </td>
+
                         </tr>
                         @empty
 
