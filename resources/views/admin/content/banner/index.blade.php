@@ -46,7 +46,7 @@
                                 <td>{{ $banner->badge_color }}</td>
                                 <td>{{ $banner->positionBanner }}</td>
                                 <td>
-                                    @if ($tag->status == "0")
+                                    @if ($banner->status == "0")
                                         <span class="badge-gold bg-danger-g">غیرفعال</span>
                                     @else
                                         <span class="badge-gold bg-success-g">فعال</span>

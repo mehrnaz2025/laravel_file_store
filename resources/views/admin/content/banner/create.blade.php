@@ -85,7 +85,7 @@
 
                         <div class="mb-3 col col-md-2">
                             <label class="form-label"> موقعیت</label>
-                            <select class="form-select" name="status">
+                            <select class="form-select" name="position">
                                 <option value="0"  @if(old('position') == "0") selected @endif>بنر - بالا صفحه ی اصلی </option>
                                 <option value="1"  @if(old('position') == "1") selected @endif> بنر - وسط صفحه ی اصلی   </option>
                             </select>

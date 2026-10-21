@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Content;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Content\BannerRequest;
 use App\Models\Admin\Content\Banner;
 use Illuminate\Http\Request;
 
@@ -21,8 +22,10 @@ class BannerController extends Controller
 
 
 
-    public function store(Request $request){
-        //
+    public function store(BannerRequest $request){
+         $inputs=$request->all();
+         Banner::query()->create($inputs);
+         return to_route('admin.content.banner.index')->with('success','بنر با موفقت حذف شد');
     }
 
 
