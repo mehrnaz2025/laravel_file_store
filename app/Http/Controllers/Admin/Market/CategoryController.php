@@ -22,7 +22,9 @@ class CategoryController extends Controller{
 
 
     public function store(CategoryRequest $request){
-
+         $inputs=$request->all();
+         Category::query()->create($inputs);
+         return to_route('admin.market.category.index')->with('success','دسته بندی با موفقیت ایجاد شد');
     }
 
 
