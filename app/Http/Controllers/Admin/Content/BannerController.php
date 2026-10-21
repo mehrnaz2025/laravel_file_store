@@ -25,7 +25,7 @@ class BannerController extends Controller
     public function store(BannerRequest $request){
          $inputs=$request->all();
          Banner::query()->create($inputs);
-         return to_route('admin.content.banner.index')->with('success','بنر با موفقت حذف شد');
+         return to_route('admin.content.banner.index')->with('success','بنر با موفقت ایجاد شد');
     }
 
 
@@ -34,17 +34,19 @@ class BannerController extends Controller
     }
 
 
-    public function edit(string $id){
-        //
+    public function edit(Banner $banner){
+           return view('admin.content.banner.edit',compact('banner'));
     }
 
 
-    public function update(Request $request, string $id){
-        //
+    public function update(BannerRequest $request,Banner $banner){
+         $inputs=$request->all();
+         $banner->update($inputs);
+         return to_route('admin.content.banner.index')->with('success','بنر با موفقت بروزرسانی شد');
     }
 
 
-    public function destroy(Banner  $banner){
+    public function destroy(Banner $banner){
          $banner->delete();
          return to_route('admin.content.banner.index')->with('success','بنر با موفقت حذف شد');
     }
