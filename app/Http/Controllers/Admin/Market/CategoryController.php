@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Market;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Market\CategoryRequest;
 use App\Models\Admin\Market\Category;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class CategoryController extends Controller{
     }
 
 
-    public function store(Request $request){
+    public function store(CategoryRequest $request){
 
     }
 
