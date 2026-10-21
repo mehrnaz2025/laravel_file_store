@@ -15,20 +15,17 @@
             </div>
 
             <div class="status-filter-buttons">
-                <a href="{{ route('admin.content.menu.index') }}" class="status-btn" data-filter="all" onclick="filterByStatus(this, '')"
-                    style="text-decoration: none;">
+                <a href="{{ route('admin.content.menu.index') }}" class="status-btn" data-filter="all" onclick="filterByStatus(this, '')" style="text-decoration: none;">
                     <span class="btn-icon">📋</span>
                     <span>همه منوها</span>
                     <span class="btn-count">   {{  App\Models\Admin\Content\Menu::allMenu()->count()  }}  </span>
                 </a>
-                <a href="{{ route('admin.content.menu.active-menu') }}" class="status-btn" data-filter="success" onclick="filterByStatus(this, '')"
-                    style="text-decoration: none;">
+                <a href="{{ route('admin.content.menu.active-menu') }}" class="status-btn" data-filter="success" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
                     <span class="btn-icon">✓</span>
                     <span>فعال</span>
                     <span class="btn-count"> {{  App\Models\Admin\Content\Menu::activeMenu()->count()  }} </span>
                 </a>
-                <a href="{{ route('admin.content.menu.inactive-menu') }}" class="status-btn" data-filter="failed" onclick="filterByStatus(this, '')"
-                    style="text-decoration: none;">
+                <a href="{{ route('admin.content.menu.inactive-menu') }}" class="status-btn" data-filter="failed" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
                     <span class="btn-icon">✗</span>
                     <span>غیرفعال</span>
                     <span class="btn-count"> {{  App\Models\Admin\Content\Menu::inactiveMenu()->count()  }} </span>

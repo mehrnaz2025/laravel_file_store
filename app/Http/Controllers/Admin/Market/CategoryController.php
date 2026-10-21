@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Admin\Market;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Market\Category;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
-{
+class CategoryController extends Controller{
 
     public function index(){
-        
+          $categories=Category::query()->latest()->paginate(5);
+         return view('admin.market.category.index',compact('categories'));
     }
 
 
