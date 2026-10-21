@@ -33,14 +33,17 @@ class CategoryController extends Controller{
     }
 
 
-    public function edit(string $id){
-
+    public function edit(Category $category){
+         $categories=Category::query()->whereNull('parent_id')->get()->except($category->id);
+         return view('admin.market.category.edit',compact('categories','category'));
     }
 
 
-    public function update(Request $request, string $id){
-
-    }
+    public function update(CategoryRequest $request,Category $category){
+            $inputs=$request->all();
+            $category->update($inputs);
+            return to_route('admin.market.category.index')->with('success','دسته بندی با موفقیت ویرایش شد');
+     }
 
 
     public function destroy(string $id){
