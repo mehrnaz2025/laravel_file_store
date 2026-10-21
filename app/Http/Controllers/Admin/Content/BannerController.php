@@ -16,7 +16,7 @@ class BannerController extends Controller
 
 
     public function create(){
-        //
+        return view('admin.content.banner.create');
     }
 
 
@@ -45,6 +45,6 @@ class BannerController extends Controller
          $banner->delete();
          return to_route('admin.content.banner.index')->with('success','بنر با موفقت حذف شد');
     }
-    
+
 
 }
