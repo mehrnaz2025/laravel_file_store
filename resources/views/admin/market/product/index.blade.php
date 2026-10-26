@@ -75,10 +75,10 @@
                             <td class="actions">
                                     <a href="{{ route('admin.market.product.edit', $product) }}" class="btn-gold btn-gold-sm">&#x270F;</a>
 
-                                    <form action="{{ route('admin.market.product.destroy', $product) }}" method="post">
+                                    <form action="{{ route('admin.market.product.destroy', $product) }}" method="post"  class="delete-form">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn-gold btn-gold-sm btn-gold-danger" type="submit">&#x1F5D1;</button>
+                                        <button class="btn-gold btn-gold-sm btn-gold-danger delete-btn" type="submit">&#x1F5D1;</button>
                                     </form>
                             </td>
 

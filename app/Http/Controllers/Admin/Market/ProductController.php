@@ -12,53 +12,72 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller{
 
-    public function index(){
-        $products=Product::query()->latest()->paginate(5);
-        return view('admin.market.product.index',compact('products'));
-    }
+        public function index(){
+            $products=Product::query()->latest()->paginate(5);
+            return view('admin.market.product.index',compact('products'));
+        }
 
 
-    public function create(){
-         $categories=Category::all();
-         return view('admin.market.product.create',compact('categories'));
-    }
+        public function create(){
+            $categories=Category::all();
+            return view('admin.market.product.create',compact('categories'));
+        }
 
 
-    public function store(ProductRequest $request,ImageUploadService $imageUploadService) {
-            $inputs=$request->all();
-            if($request->hasFile('image')){
+        public function store(ProductRequest $request,ImageUploadService $imageUploadService) {
+                $inputs=$request->all();
+                if($request->hasFile('image')){
+                        $result=$imageUploadService->uploadImage($request->file('image'));
+                        if($result === false){
+                            return back()->with('error', 'خطا در آپلود فایل');
+                        }
+                    $inputs['image']=$result;
+                }
+
+                $inputs['user_id']=Auth::id();
+                Product::query()->create($inputs);
+                return to_route('admin.market.product.index')->with('success',' محصول با موفقیت ایجاد شد');
+
+        }
+
+
+        public function show(string $id){
+            //
+        }
+
+
+        public function edit(Product $product){
+            $categories=Category::all();
+            return view('admin.market.product.edit',compact('product','categories'));
+        }
+
+        public function update(ProductRequest $request,Product $product,ImageUploadService $imageUploadService){
+                $inputs=$request->all();
+                if($request->hasFile('image')){
+
+                    if (!empty($product->image)){
+                            $imageUploadService->removeImage($product->image);
+                    }
                     $result=$imageUploadService->uploadImage($request->file('image'));
                     if($result === false){
-                         return back()->with('error', 'خطا در آپلود فایل');
+                        return back()->with('error', 'خطا در آپلود فایل');
                     }
-                   $inputs['image']=$result;
+                    $inputs['image']=$result;
+                }else{
+                    $inputs['image']=$product->image;
             }
 
             $inputs['user_id']=Auth::id();
-            Product::query()->create($inputs);
-            return to_route('admin.market.product.index')->with('success',' محصول با موفقیت ایجاد شد');
-
-    }
-
-
-    public function show(string $id){
-        //
-    }
+            $product->update($inputs);
+            return to_route('admin.market.product.index')->with('success',' محصول با موفقیت ویرایش شد');
+        }
 
 
-    public function edit(Product $product){
-        $categories=Category::all();
-        return view('admin.market.product.edit',compact('product','categories'));
-    }
+        public function destroy(Product $product){
+             $product->delete();
+            return to_route('admin.market.product.index')->with('success',' محصول با موفقیت حذف شد');
+        }
 
-    public function update(Request $request, string $id){
-        //
-    }
-
-
-    public function destroy(string $id){
-        //
-    }
 
 
        public function activeStatus(){
