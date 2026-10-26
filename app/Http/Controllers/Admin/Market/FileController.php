@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Admin\Market;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Market\File;
+use App\Models\Admin\Market\Product;
 use Illuminate\Http\Request;
 
 class FileController extends Controller
 {
 
-    public function index(){
-        //
+    public function index(Product $product){
+            $files=File::query()->orderBy('number','ASC')->paginate(5);
+            return view('admin.market.product.file-product.index',compact('files','product'));
     }
 
 
