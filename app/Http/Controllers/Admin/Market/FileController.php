@@ -99,4 +99,13 @@ class FileController extends Controller
             return to_route('admin.market.product-file.index',$product)->with('success',' فایل با موفقیت  حذف  ایجاد شد');
 
     }
+
+       public function download(Product $product , File $file){
+
+          if (!Storage::exists($file->file)) {
+               return  to_route('admin.market.product-file.index',$product)->with('error','خطا در دانلود فایل');
+            }
+           return  Storage::download($file->file);
+
+    }
 }

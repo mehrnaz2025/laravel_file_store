@@ -45,12 +45,14 @@
                                 <td>{{ $file->create }}</td>
 
                             <td class="actions">
-                                    <a href="{{ route('admin.market.product-file.edit', ['file'=>$file,'product'=>$product]) }}" class="btn-gold btn-gold-sm">&#x270F;</a>
+                                 <a  href="{{ route('admin.market.product-file.download', ['file'=>$file,'product'=>$product]) }}"  class="btn-gold btn-gold-sm btn-gold-info"  style="font-size: 16px;">&#x1F4E4; دانلود</a>
+
+                                    <a href="{{ route('admin.market.product-file.edit', ['file'=>$file,'product'=>$product]) }}" class="btn-gold btn-gold-sm"  style="font-size: 16px;">&#x270F;</a>
 
                                     <form action="{{ route('admin.market.product-file.destroy',['file'=>$file , 'product'=> $product]) }}" method="post"  class="delete-form">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn-gold btn-gold-sm btn-gold-danger delete-btn" type="submit">&#x1F5D1;</button>
+                                        <button class="btn-gold btn-gold-sm btn-gold-danger delete-btn" type="submit"  style="font-size: 16px;">&#x1F5D1;</button>
                                     </form>
                             </td>
 
