@@ -91,7 +91,12 @@ class FileController extends Controller
     }
 
 
-    public function destroy(string $id){
-        //
+    public function destroy(Product $product,File $file){
+            if ($file->file && Storage::exists($file->file)) {
+                Storage::delete($file->file);
+            }
+            $file->delete();
+            return to_route('admin.market.product-file.index',$product)->with('success',' فایل با موفقیت  حذف  ایجاد شد');
+
     }
 }
