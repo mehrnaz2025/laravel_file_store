@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Market;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Market\Category;
 use App\Models\Admin\Market\Product;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class ProductController extends Controller{
 
 
     public function create(){
-        //
+         $categories=Category::all();
+         return view('admin.market.product.create',compact('categories'));
     }
 
 
