@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Content\MenuController;
 use App\Http\Controllers\Admin\Content\TagController;
 use App\Http\Controllers\Admin\DashboardCotroller;
 use App\Http\Controllers\Admin\Market\CategoryController;
+use App\Http\Controllers\Admin\Market\FileController;
 use App\Http\Controllers\Admin\Market\ProductController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\ProfileController;
@@ -38,9 +39,20 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::get('/active-category',[CategoryController::class,'activeStatus'])->name('category.active-category');
                Route::get('/inactive-category',[CategoryController::class,'inactiveStatus'])->name('category.inactive-category');
 
+               //product routes
                Route::resource('product', ProductController::class);
                Route::get('/active-product',[ProductController::class,'activeStatus'])->name('product.active-product');
                Route::get('/inactive-product',[ProductController::class,'inactiveStatus'])->name('product.inactive-product');
+
+               //product-file routes
+                Route::get('/product-file/{product}',[FileController::class,'index'])->name('product-file.index');
+                Route::get('/product-file/{product}/create',[FileController::class,'create'])->name('product-file.create');
+                Route::post('/product-file/{product}/store',[FileController::class,'store'])->name('product-file.store');
+                Route::get('/product-file/{product}/edit/{file}',[FileController::class,'edit'])->name('product-file.edit');
+                Route::put('/product-file/{product}/update/{file}',[FileController::class,'update'])->name('product-file.update');
+                Route::delete('/product-file/{product}/destroy/{file}',[FileController::class,'destroy'])->name('product-file.destroy');
+                Route::get('/product-file/{product}/download/{file}', [FileController::class, 'download'])->name('product-file.download');
+
 
        });
 
