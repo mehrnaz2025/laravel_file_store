@@ -18,10 +18,20 @@
                 <span class="group-icon">📦</span>
                 <span class="group-text">بخش فروشگاه</span>
             </div>
+
             <div class="menu-item">
                 <span class="icon">&#x1F4C1;</span>
                 <a href="{{ route('admin.market.category.index') }}" style="text-decoration: none ; color:antiquewhite">دسته بندی</a>
             </div>
+
+            <div class="menu-item">
+                <span class="icon d-flex" style="font-size: 11px;">
+
+                      <span  class="">&#128214;</span>/<span class="">&#127911;</span>
+                 </span>
+                <a href="{{ route('admin.market.product.index') }}" style="text-decoration: none ; color:antiquewhite;width:100%"> محصول </a>
+            </div>
+
 
 
 
