@@ -46,10 +46,10 @@ class ProductController extends Controller{
     }
 
 
-    public function edit(string $id){
-        //
+    public function edit(Product $product){
+        $categories=Category::all();
+        return view('admin.market.product.edit',compact('product','categories'));
     }
-
 
     public function update(Request $request, string $id){
         //
