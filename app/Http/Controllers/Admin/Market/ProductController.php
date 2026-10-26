@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Admin\Market;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Market\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller{
 
     public function index(){
-        //
+        $products=Product::query()->latest()->paginate(5);
+        return view('admin.market.product.index',compact('products'));
     }
 
 
@@ -42,5 +44,5 @@ class ProductController extends Controller{
     }
 
 
-    
+
 }
