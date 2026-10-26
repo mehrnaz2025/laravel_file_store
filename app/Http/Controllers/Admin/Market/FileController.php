@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Market\FileRequest;
 use App\Models\Admin\Market\File;
 use App\Models\Admin\Market\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -54,13 +55,39 @@ class FileController extends Controller
     }
 
 
-    public function edit(string $id){
-        //
+    public function edit(Product $product,File $file) {
+           return view('admin.market.product.file-product.edit',compact('product','file'));
     }
 
+    public function update(Request $request,Product $product,File $file){
+           $inputs=$request->all();
+           if ($request->hasFile('file')) {
 
-    public function update(Request $request, string $id){
-        //
+                if ($file->file && Storage::exists($file->file)) {
+                    Storage::delete($file->file);
+                }
+
+                $mimeType = $request->file('file')->getMimeType();
+                $mimes= ['audio/mpeg' => 0,  'audio/wav'  => 1, 'application/zip' => 2,'application/x-rar-compressed' => 3,
+                                'application/x-7z-compressed'  => 4, 'application/x-tar' => 5,  'application/pdf' => 6, 'text/plain' => 7,'application/x-rar'=>8 ];
+
+                $typeNumber = $mimes[$mimeType] ?? 0;
+                $path = $request->file('file')->store('uploads');
+                $inputs['file']=$path;
+                $inputs['original_name']=$request->file('file')->getClientOriginalName();
+                $inputs['mime_type']=$request->file('file')->getMimeType();
+                $inputs['size']=$request->file('file')->getSize();
+                $inputs['extension']=$request->file('file')->getClientOriginalExtension();
+                $inputs['type']=$typeNumber;
+
+           }else{
+
+               $inputs['file']=$file->file;
+          }
+
+          $file->update($inputs);
+          return to_route('admin.market.product-file.index',$product)->with('success',' فایل با موفقیت ویرایش شد');
+
     }
 
 
