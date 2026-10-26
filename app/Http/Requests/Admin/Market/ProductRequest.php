@@ -20,13 +20,12 @@ class ProductRequest extends FormRequest{
                         'auther'=>'nullable|min:2|max:1000|regex:/^[ا-یa-zA-z,،ئ.-يء ]+$/u',
                         'speaker'=>'nullable|min:2|max:1000|regex:/^[ا-یa-zA-z,،ئ.-يء ]+$/u',
                         'description'=>'required|min:1|max:2000',
-                        'rice'=>'required|numeric',
+                        'price'=>'required|numeric',
                         'image'=>'required|image|mimes:png,jpg,jpeg,gif,webp',
                         'status'=>'required|in:0,1|numeric',
                         'category_id'=>'required|min:1|max:100000000|exists:categories,id|regex:/^[0-9]+$/u',
 
                     ];
-
             }else{
                     return [
 
@@ -34,7 +33,7 @@ class ProductRequest extends FormRequest{
                          'auther'=>'nullable|min:2|max:1000|regex:/^[ا-یa-zA-z,،ئ.-يء ]+$/u',
                         'speaker'=>'nullable|min:2|max:1000|regex:/^[ا-یa-zA-z,،ئ.-يء ]+$/u',
                         'description'=>'required|min:1|max:2000',
-                        ' price'=>'required|numeric',
+                        'price'=>'required|numeric',
                         'image'=>'image|mimes:png,jpg,jpeg,gif,webp',
                         'status'=>'required|in:0,1|numeric',
                         'category_id'=>'required|min:1|max:100000000|exists:categories,id|regex:/^[0-9]+$/u',

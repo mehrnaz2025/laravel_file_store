@@ -6,7 +6,7 @@
 
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="">&#x1F4C1; افزودن محصول</h5>
+                <h5 class="">&#128214; /&#127911; افزودن محصول</h5>
             </div>
             <form action="{{route('admin.market.product.store')}}" method="post"  enctype="multipart/form-data">
                 @csrf
