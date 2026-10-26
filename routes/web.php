@@ -39,6 +39,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::get('/inactive-category',[CategoryController::class,'inactiveStatus'])->name('category.inactive-category');
 
                Route::resource('product', ProductController::class);
+               Route::get('/active-product',[ProductController::class,'activeStatus'])->name('product.active-product');
+               Route::get('/inactive-product',[ProductController::class,'inactiveStatus'])->name('product.inactive-product');
 
        });
 

@@ -44,5 +44,18 @@ class ProductController extends Controller{
     }
 
 
+       public function activeStatus(){
+            $products=Product::query()->activeProducts()->latest()->paginate(12);
+            return view('admin.market.product.index',compact('products'));
+        }
+
+
+        public function inactiveStatus(){
+            $products=Product::query()->inactiveProducts()->latest()->paginate(12);
+            return view('admin.market.product.index',compact('products'));
+        }
+
+
+
 
 }

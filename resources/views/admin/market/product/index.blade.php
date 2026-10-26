@@ -16,23 +16,23 @@
 
         <!-- دکمه‌های فیلتر وضعیت محصولات -->
         <div class="status-filter-buttons">
-          <a href="" class="status-btn" onclick="filterByStatus(this, '')" style="text-decoration: none;>
-            <span class="btn-icon">📋</span>
-            <span>همه تگ‌ها</span>
-            <span class="btn-count">   </span>
+          <a href="{{ route('admin.market.product.index') }}" class="status-btn" onclick="filterByStatus(this, '')" style="text-decoration: none;>
+            <span class="btn-icon">&#128214; /&#127911;</span>
+            <span>همه محصولات </span>
+            <span class="btn-count"> {{ App\Models\Admin\market\Product::allProducts()->count() }}   </span>
           </a>
 
-          <a href="" class="status-btn"   data-filter="success" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
+          <a href="{{ route('admin.market.product.active-product') }}" class="status-btn"   data-filter="success" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
             <span class="btn-icon">✓</span>
             <span>فعال</span>
-            <span class="btn-count"> </span>
+            <span class="btn-count"> {{ App\Models\Admin\market\Product::activeProducts()->count() }}</span>
           </a>
 
 
-          <a href="" class="status-btn" data-filter="failed" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
+          <a href="{{ route('admin.market.product.inactive-product') }}" class="status-btn" data-filter="failed" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
             <span class="btn-icon">✗</span>
             <span>غیرفعال</span>
-            <span class="btn-count">  </span>
+            <span class="btn-count">  {{ App\Models\Admin\Market\Product::inactiveProducts()->count() }}  </span>
           </a>
         </div>
 
