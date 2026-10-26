@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Content\MenuController;
 use App\Http\Controllers\Admin\Content\TagController;
 use App\Http\Controllers\Admin\DashboardCotroller;
 use App\Http\Controllers\Admin\Market\CategoryController;
+use App\Http\Controllers\Admin\Market\ProductController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::resource('category', CategoryController::class);
                Route::get('/active-category',[CategoryController::class,'activeStatus'])->name('category.active-category');
                Route::get('/inactive-category',[CategoryController::class,'inactiveStatus'])->name('category.inactive-category');
+
+               Route::resource('product', ProductController::class);
 
        });
 
