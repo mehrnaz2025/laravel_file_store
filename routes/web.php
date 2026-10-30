@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Market\CategoryController;
 use App\Http\Controllers\Admin\Market\FileController;
 use App\Http\Controllers\Admin\Market\ProductController;
 use App\Http\Controllers\Admin\Setting\SettingController;
+use App\Http\Controllers\CoupanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
                 Route::put('/product-file/{product}/update/{file}',[FileController::class,'update'])->name('product-file.update');
                 Route::delete('/product-file/{product}/destroy/{file}',[FileController::class,'destroy'])->name('product-file.destroy');
                 Route::get('/product-file/{product}/download/{file}', [FileController::class, 'download'])->name('product-file.download');
+
+
+              //coupan discount routes
+               Route::resource('coupan', CoupanController::class);
+               Route::get('/active-coupan',[CoupanController::class,'activeStatus'])->name('product.active-coupan');
+               Route::get('/inactive-coupan',[CoupanController::class,'inactiveStatus'])->name('product.inactive-coupan');
 
 
        });
