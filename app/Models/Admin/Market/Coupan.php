@@ -17,6 +17,23 @@ class Coupan extends Model{
 
 
 
+    public function getStartDatePersianAttribute() {
+        if (!$this->start_date) return '';
+        $persian = Jalalian::forge($this->start_date)->format('Y/m/d');
+        // $persian = Jalalian::forge($this->start_date)->format('Y/m/d H:i');
+        return CalendarUtils::convertNumbers($persian);
+    }
+
+    public function getEndDatePersianAttribute()
+    {
+        if (!$this->end_date) return '';
+        $persian = Jalalian::forge($this->end_date)->format('Y/m/d');
+        return CalendarUtils::convertNumbers($persian);
+    }
+
+
+
+
 
 // ******************************some scops*************************************
         public function scopeActiveCoupans(Builder $query): Builder{

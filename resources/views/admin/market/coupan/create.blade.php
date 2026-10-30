@@ -1,53 +1,39 @@
 @extends('admin.layouts.master')
-@section('title','ایجاد محصول ')
+@section('title', 'ایجاد کد تخفیف ')
 
+@section('style')
+   <link rel="stylesheet" href="{{ asset('admin-assets/jalalidatepicker/persian-datepicker.min.css') }}">
+
+@endsection
 
 @section('content')
-
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="">&#128214; /&#127911; افزودن محصول</h5>
-            </div>
-            <form action="{{route('admin.market.product.store')}}" method="post"  enctype="multipart/form-data">
+    <div class="modal-header">
+        <h5 class=""> افزودن تخفیف</h5>
+    </div>
+            <form action="{{ route('admin.market.coupan.store') }}" method="post">
                 @csrf
                 <div class="modal-body">
                         <div class="row">
 
-                            <div class="mb-3 col col-md-6">
-                                <label class="form-label">نام محصول</label>
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-                                @error('name')
-                                    <div class="p-1 my-1 text-danger rounded "><strong>{{ $message }}</strong></div>
-                                @enderror
-                            </div>
-
-                            <div class="mb-3 col-12 col-lg-3">
-                                <label class="form-label"> گوینده</label>
-                                <input type="text" class="form-control" name="speaker" value="{{ old('speaker') }}">
-                                @error('speaker')
-                                    <div class="p-1 my-1 text-danger rounded "><strong>{{ $message }}</strong></div>
-                                @enderror
-                            </div>
-
-                            <div class="mb-3 col-12 col-lg-3">
-                                <label class="form-label"> نویسنده</label>
-                                <input type="text" class="form-control" name="auther" value="{{ old('auther') }}">
-                                @error('auther')
+                            <div class="mb-3 col col-md-4">
+                                <label class="form-label"> عنوان کد</label>
+                                <input type="text" class="form-control" name="code" value="{{ old('code') }}">
+                                @error('code')
                                     <div class="p-1 my-1 text-danger rounded "><strong>{{ $message }}</strong></div>
                                 @enderror
                             </div>
 
 
-                            <div class="mb-3 col col-md-3">
-                                <label class="form-label"> قیمت</label>
-                                <input type="number"   min="1" class="form-control" name="price" value="{{ old('price') }}">
-                                @error('price')
+                            <div class="mb-3 col col-md-2">
+                                <label class="form-label"> درصد تخفیف</label>
+                                <input type="number"  min="1"  class="form-control" name="percent" value="{{ old('percent') }}">
+                                @error('percent')
                                     <div class="p-1 my-1 text-danger rounded "><strong>{{ $message }}</strong></div>
                                 @enderror
                             </div>
 
-
-                            <div class="mb-3 col col-md-3">
+                            <div class="mb-3 col col-md-2">
                                 <label class="form-label">وضعیت</label>
                                 <select class="form-select" name="status">
                                     <option value="0" @if (old('status') == '0') selected @endif> غیرفعال</option>
@@ -58,55 +44,31 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3 col col-md-3">
-                                <label class="form-label">  وضعیت فروش </label>
-                                <select class="form-select" name="marketable">
-                                    <option value="0" @if (old('marketable') == '0') selected @endif> غیرفعال</option>
-                                    <option value="1" @if (old('marketable') == '1') selected @endif> فعال</option>
-                                </select>
-                                @error('marketable')
-                                    <div class="p-1 my-2 text-danger rounded "><strong>{{ $message }}</strong></div>
+                            <div class="form-group col col-12 col-md-2 mt-1">
+                                <label> زمان شروع تخفیف:</label>
+
+                                <input type="hidden" name="start_date" id="start_date">
+                                <input type="text"  id="start_date_display" class="form-control">
+
+                                @error('start_date')
+                                    <span style="color: #ef4444; font-size: 15px; margin-top: 5px; display:block;">{{ $message }}</span>
                                 @enderror
                             </div>
 
 
-                            <div class="mb-3 col col-md-3">
-                                <label class="form-label">انتخاب دسته بندی</label>
-                                <select class="form-select" name="category_id">
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}"  @if(old('category_id')==$category->id) selected @endif >{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                                @error('category_id')
-                                    <div class="p-1 my-2 text-danger rounded "><strong>{{ $message }}</strong></div>
+                            <div class="form-group col col-12 col-md-2 mt-1">
+                                <label> زمان پایان تخفیف:</label>
+
+                                <input type="hidden" name="end_date" id="end_date">
+                                <input type="text"  id="end_date_display" class="form-control">
+
+                                @error('start_date')
+                                    <span style="color: #ef4444; font-size: 15px; margin-top: 5px; display:block;">{{ $message }}</span>
                                 @enderror
                             </div>
 
 
-                            <div class="mb-3 col col-md-5">
-                                <label class="form-label">تصویر محصول</label>
-                                <div class="product-file-upload" onclick="document.getElementById('productFileInput').click()">
-                                    <div class="product-file-icon">🖼️</div>
-                                    <div class="product-file-text">
-                                        <div class="product-file-title">عکس محصول را انتخاب کنید</div>
-                                        <div class="product-file-hint">پسوندهای مجاز :png,jpg,jpeg,gif,webp</div>
-                                    </div>
-                                    <input type="file" id="productFileInput"  name="image" />
-                                </div>
-                                <div id="productFileName" class="product-file-name"></div>
-                                @error('image')
-                                    <div class="p-1 my-2 text-danger rounded "><strong>{{ $message }}</strong></div>
-                                @enderror
-                            </div>
 
-
-                            <div class="mb-3 col-12">
-                                <label class="form-label">توضیحات</label>
-                                <textarea class="form-control" rows="3"  name="description" id="description">{{old('description')}} </textarea>
-                                @error('description')
-                                    <span class="p-1 py-3 my-3 text-danger rounded"><strong>{{$message}}</strong></span>
-                                @enderror
-                            </div>
 
                         </div>
                 </div>
@@ -122,8 +84,22 @@
 
 
  @section('scripts')
-        <script src="{{asset('admin-assets/ckeditor/ckeditor.js')}}"></script>
-        <script>
-            CKEDITOR.replace('description');
-        </script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+     <script src="{{ asset('admin-assets/jalalidatepicker/persian-date.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/jalalidatepicker/persian-datepicker.min.js') }}"></script>
+      <script>
+            $(document).ready(function () {
+                $('#start_date_display').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    altField: '#start_date'
+                })
+
+              $('#end_date_display').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    altField: '#end_date'
+                })
+            });
+     </script>
+
+
 @endsection

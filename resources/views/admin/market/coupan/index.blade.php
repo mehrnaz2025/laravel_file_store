@@ -1,13 +1,13 @@
 @extends('admin.layouts.master')
-@section('title', 'لیست محصولات')
+@section('title', 'لیست کدهای تخفیف')
 
 @section('content')
 
             <section>
         <div class="glass">
             <div class="section-header">
-                <h3>🏷️ مدیریت محصولات</h3>
-                <a   href="{{route('admin.market.product.create')}}"  class="btn-gold">➕ افزودن محصول</a>
+                <h3>🏷️  لیست کدهای تخفیف</h3>
+                <a   href="{{route('admin.market.coupan.create')}}"  class="btn-gold">➕ افزودن کد تخفیف</a>
             </div>
 
                         <div class="search-container">
@@ -60,8 +60,8 @@
                                 <th>{{ $coupans->firstItem() + $key }}</th>
                                 <td>{{ $coupan->code }}</td>
                                 <td> % {{ $coupan->percent }}</td>
-                                <td>  {{$coupan->start_date}}</td>
-                                <td>  {{$coupan->end_date }}</td>
+                                <td>  {{$coupan->start_date_persian}}</td>
+                                <td>  {{$coupan->end_date_persian }}</td>
                                 <td>
                                     @if ($coupan->status == '0')
                                         <span class="badge-gold bg-danger-g">غیرفعال</span>
