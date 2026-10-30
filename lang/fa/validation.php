@@ -177,6 +177,11 @@ return [
         'badge_color'               => "رنگ بج",
         'position'                  => "موقعیت",
         'expire_at'                 => "تاریخ انقضا",
+        'code'       =>'کد تخفیف',
+        'percent'    =>'درصد تخفیف',
+        'start_date'=>'تاریخ شروع',
+        'end_date'=>'تاریخ پایان',
+
 
     ],
 ];

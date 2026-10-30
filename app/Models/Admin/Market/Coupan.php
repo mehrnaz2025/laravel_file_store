@@ -12,7 +12,7 @@ class Coupan extends Model{
 
      use SoftDeletes;
 
-    protected $table='coupans';
+
     protected $guarded=['id'];
 
 

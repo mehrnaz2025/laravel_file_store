@@ -68,12 +68,10 @@
                             </div>
 
 
-
-
                         </div>
                 </div>
                 <div class="modal-footer">
-                     <a href="{{ route('admin.market.product.index') }}"  class="btn-gold btn-gold-danger mx-2">برگشت</a>
+                     <a href="{{ route('admin.market.coupan.index') }}"  class="btn-gold btn-gold-danger mx-2">برگشت</a>
                     <button type="submit" class="btn-gold btn-gold-success">&#x1F4BE; ذخیره</button>
                 </div>
             </form>

@@ -5,6 +5,7 @@
 namespace App\Http\Controllers\Admin\Market;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Market\CoupanRequest;
 use App\Models\Admin\Market\Coupan;
 use Illuminate\Http\Request;
 
@@ -18,14 +19,14 @@ class CoupanController extends Controller
 
 
     public function create()
-    {
+{
         return view('admin.market.coupan.create');
     }
 
 
-    public function store(Request $request)
+    public function store(CoupanRequest $request)
     {
-    //    dd($request->all());
+       dd($request->all());
 
          $timeStamStartDate=substr($request->start_date,0,10);
          $start_date=date("Y-m-d H:i:s",(int)$timeStamStartDate);
@@ -73,6 +74,7 @@ class CoupanController extends Controller
 
 
       public function activeStatus(){
+
          $coupans=Coupan::query()->activeCoupans()->latest()->paginate(12);
          return view('admin.market.coupan.index',compact('coupans'));
       }
