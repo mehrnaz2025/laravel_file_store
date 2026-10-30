@@ -19,19 +19,19 @@ class Coupan extends Model{
 
 
 // ******************************some scops*************************************
-        public function scopeActiveDiscounts(Builder $query): Builder{
+        public function scopeActiveCoupans(Builder $query): Builder{
             return $query->where('status', 1);
         }
 
 
 
-        public function scopeInactiveDiscounts(Builder $query): Builder{
+        public function scopeInactiveCoupans(Builder $query): Builder{
             return $query->where('status', 0);
         }
 
 
 
-        public function scopeAllDiscounts(Builder $query): Builder{
+        public function scopeAllCoupans(Builder $query): Builder{
             return $query;
         }
 

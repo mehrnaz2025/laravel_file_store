@@ -18,7 +18,7 @@
         <div class="status-filter-buttons">
           <a href="{{route('admin.market.category.index')}}" class="status-btn" onclick="filterByStatus(this, '')" style="text-decoration: none;>
             <span class="btn-icon">📋</span>
-            <span>همه تگ‌ها</span>
+            <span>همه دسته بندی ها</span>
             <span class="btn-count">  {{App\Models\Admin\market\Category::allCategory()->count() }}  </span>
           </a>
 

@@ -34,6 +34,28 @@
 
 
 
+        <!--  بخش تخفیفات  -->
+            <div class="sidebar-group-title">
+                <span class="group-icon">
+                      <span> &#127873;</span>
+                 </span>
+                <span class="group-text"> تخفیفات</span>
+            </div>
+
+            <div class="menu-item">
+
+                  <span class="icon d-flex" style="font-size: 11px;">
+
+                      <span  class="" style="font-size:1.2rem">&#127903;</span>
+
+                  </span>
+                <a href="{{ route('admin.market.coupan.index') }}" style="text-decoration: none ; color:antiquewhite"> تخفیف کوپنی  </a>
+            </div>
+
+
+
+
+
         <!--  بخش محتوا  -->
             <div class="sidebar-group-title">
                 <span class="group-icon">&#x1F4DD;</span>
