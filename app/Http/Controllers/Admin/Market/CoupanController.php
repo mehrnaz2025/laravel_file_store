@@ -18,8 +18,7 @@ class CoupanController extends Controller
     }
 
 
-    public function create()
-{
+    public function create(){
         return view('admin.market.coupan.create');
     }
 
@@ -47,21 +46,33 @@ class CoupanController extends Controller
     }
 
 
-    public function show(Coupan $coupan)
-    {
+    public function show(Coupan $coupan){
         //
     }
 
 
-    public function edit(Coupan $coupan)
-    {
-        //
+    public function edit(Coupan $coupan){
+        return view('admin.market.coupan.edit',compact('coupan'));
     }
 
 
-    public function update(Request $request, Coupan $coupan)
-    {
-        //
+    public function update(CoupanRequest $request, Coupan $coupan){
+
+         $timeStamStartDate=substr($request->start_date,0,10);
+         $start_date=date("Y-m-d H:i:s",(int)$timeStamStartDate);
+
+        $timeStamEndDate=substr($request->end_date,0,10);
+        $end_date=date("Y-m-d H:i:s",(int)$timeStamEndDate);
+
+       $coupan->update([
+                'code'       =>$request->code,
+                'percent'    =>$request-> percent,
+                'status'     =>$request-> status,
+                'start_date' => $start_date,
+                'end_date'   =>$end_date,
+        ]);
+
+        return to_route('admin.market.coupan.index') ->with('success', 'کد تخفیف با موفقیت ویرایش شد ✅');
     }
 
 

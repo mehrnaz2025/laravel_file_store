@@ -22,7 +22,7 @@
         });
 
 
-        @if (session('success'))
+        @if (session('error'))
             Swal.fire({
                 title: 'خطا',
                 text: '{{ session('error') }}',
