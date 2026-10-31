@@ -26,7 +26,7 @@ class CoupanController extends Controller
 
     public function store(CoupanRequest $request)
     {
-       dd($request->all());
+       //dd($request->all());
 
          $timeStamStartDate=substr($request->start_date,0,10);
          $start_date=date("Y-m-d H:i:s",(int)$timeStamStartDate);

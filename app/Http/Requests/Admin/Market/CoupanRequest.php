@@ -15,22 +15,23 @@ class CoupanRequest extends FormRequest
 
 
     public function rules(): array{
+        //dd(request()->all());
           if($this->isMethod('post')){
                     return [
-                            'code'       => ['required', 'string', 'max:50', 'regex:/^[A-Za-zا-ی0-9_]+$/','unique:discounts,code'],
-                            'percent'    => ['required', 'integer', 'min:1', 'max:100'],
-                            'start_date' => ['required', 'numeric'],
-                             'status'     => ['required','in:0,1','numeric'],
-                            'end_date'   => ['required',  'numeric', 'after:start_date'],
+                            'code'       => ['required', 'string', 'max:50', 'regex:/^[A-Za-zا-ی0-9_]+$/','unique:coupans,code'],
+                            'percent'    => 'required|integer|min:1|max:100',
+                            'start_date' => 'required|numeric',
+                            'status'     => 'required|in:0,1|numeric',
+                            'end_date'   => 'required|numeric',
                        ];
 
             }else{
                     return [
-                            'code'       => ['required', 'string', 'max:50','regex:/^[A-Za-zا-ی0-9_]+$/', 'unique:discounts,code,'. request()->id],
+                            'code'       => ['required', 'string', 'max:50','regex:/^[A-Za-zا-ی0-9_]+$/', 'unique:coupans,code,'. request()->id],
                             'percent'    => ['required', 'integer', 'min:1', 'max:100'],
                             'start_date' => ['required', 'numeric'],
                              'status'     => ['required','in:0,1','numeric'],
-                            'end_date'   => ['required',  'numeric', 'after:start_date'],
+                            'end_date'   => ['required',  'numeric'],
                        ];
             }
     }
