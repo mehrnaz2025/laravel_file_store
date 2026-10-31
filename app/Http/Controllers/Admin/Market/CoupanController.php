@@ -41,7 +41,7 @@ class CoupanController extends Controller
             'end_date'   =>$end_date,
         ]);
 
-        return to_route('admin.market.coupan.index') ->with('success', 'کد تخفیف با موفقیت ایجاد شد ✅');
+        return to_route('admin.market.coupan.index') ->with('success', 'کد تخفیف با موفقیت ایجاد شد ');
 
     }
 
@@ -72,13 +72,13 @@ class CoupanController extends Controller
                 'end_date'   =>$end_date,
         ]);
 
-        return to_route('admin.market.coupan.index') ->with('success', 'کد تخفیف با موفقیت ویرایش شد ✅');
+        return to_route('admin.market.coupan.index') ->with('success', 'کد تخفیف با موفقیت ویرایش شد ');
     }
 
 
-    public function destroy(Coupan $coupan)
-    {
-        //
+    public function destroy(Coupan $coupan){
+        $coupan->delete();
+        return to_route('admin.market.coupan.index') ->with('success', 'کد تخفیف با موفقیت حذف شد ');
     }
 
 
