@@ -35,13 +35,13 @@
                                 <td>{{ $wallet->transactions()->count() }}</td>
                                  <td class="actions">
                                     <a href="{{ route('admin.user.wallet.edit', $wallet) }}"   class="btn-gold btn-gold-sm">&#x270F;</a>
-                                 {{--   <form action="{{ route('admin.user.wallet.destroy', $wallet) }}" method="post"
+                                   <form action="{{ route('admin.user.wallet.destroy', $wallet) }}" method="post"
                                         class="delete-form">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn-gold btn-gold-sm btn-gold-danger delete-btn"
                                             style="font-size: 18px">&#x1F5D1;</button>
-                                    </form> --}}
+                                    </form> 
                                 </td>
                             </tr>
                         @empty

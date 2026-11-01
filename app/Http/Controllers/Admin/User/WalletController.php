@@ -50,6 +50,15 @@ class WalletController extends Controller{
 
 
 
+    public function destroy(Wallet $wallet){
+          $wallet->delete();
+         return to_route('admin.user.wallet.index')->with('success','  کیف پول با موفقیت حذف  شد ');
+
+    }
+
+
+
+
 
 
 }

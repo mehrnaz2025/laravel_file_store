@@ -181,6 +181,7 @@ return [
         'percent'    =>'درصد تخفیف',
         'start_date'=>'تاریخ شروع',
         'end_date'=>'تاریخ پایان',
+        'balance'=>'مبلغ ',
 
 
     ],
