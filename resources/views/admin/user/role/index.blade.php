@@ -6,7 +6,7 @@
         <div class="glass">
             <div class="section-header">
                 <h3>🏷️ مدیریت سطوح دسترسی</h3>
-                <a href="{{ route('admin.user.role.create') }}" class="btn-gold">➕ افزودن «قش</a>
+                <a href="{{ route('admin.user.role.create') }}" class="btn-gold">➕ افزودن نقش</a>
             </div>
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="جستجو در نقش ها..."

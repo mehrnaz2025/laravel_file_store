@@ -22,4 +22,14 @@ class RoleController extends Controller{
     }
 
 
+     public function store(Request $request){
+
+            $inputs=$request->all();
+            $role=Role::create($inputs);
+            $role->givePermissionTo($request->permissions);
+            return to_route('admin.user.role.index')->with('success',' نقش با موفقیت ایجاد شد');
+
+    }
+
+
 }
