@@ -6,8 +6,8 @@
 
     <section>
         <div class="glass">
-               <div class="section-header">
-                <h3>&#x1F4B0; مدیریت کیف پول</h3>
+            <div class="section-header">
+                <h3>&#x1F4B0; لیست کیف پول</h3>
                 <a href="{{ route('admin.user.wallet.create') }}" class="btn-gold">➕ افزودن کیف پول</a>
             </div>
             <div class="search-container">
@@ -15,15 +15,13 @@
                     onkeyup="searchTable('categories-table', this.value)">
             </div>
 
-
-
             <div style="overflow-x:auto">
                 <table id="categories-table">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>کاربر</th>
-                            <th>موجودی (ت)</th>
+                            <th>موجودی (ریال)</th>
                             <th>تراکنش</th>
                             <th>عملیات</th>
                         </tr>
@@ -32,7 +30,7 @@
                         @forelse ($wallets as $key=>$wallet)
                             <tr>
                                 <th>{{ $wallets->firstItem() + $key }}</th>
-                                <td>{{ $wallet->user->email ?? $wallet->user->mobile  }}</td>
+                                <td>{{ $wallet->user->email ?? $wallet->user->mobile }}</td>
                                 <td>{{ $wallet->balance }}</td>
                                 <td>{{ $wallet->transactions()->count() }}</td>
                                 {{-- <td class="actions">
@@ -58,15 +56,8 @@
                 </div>
             </div>
 
-
-
-
         </div>
 
-
     </section>
-
-
-
 
 @endsection

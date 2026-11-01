@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
 
@@ -13,5 +14,14 @@ class WalletController extends Controller{
         return view('admin.user.wallet.index',compact('wallets'));
 
     }
+
+
+    public function create(){
+        $users = User::all();
+        return view('admin.user.wallet.create',compact('users'));
+    }
+
+
+
 
 }
