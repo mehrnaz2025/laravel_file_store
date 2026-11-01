@@ -29,11 +29,25 @@ class PermissionController extends Controller{
     }
 
 
+    public function edit(Permission $permission){
+        return view('admin.user.permission.edit',compact('permission'));
+    }
+
+
+   public function update(PermissionRequest $request,Permission $permission){
+
+            $inputs=$request->all();
+            $permission->update($inputs);
+            return to_route('admin.user.permission.index')->with('success','مجوز دسترسی با موفقیت ثبت شد');
+    }
 
    public function destroy(Permission $permission){
         $permission->delete();
         return to_route('admin.user.permission.index')->with('success','مجوز دسترسی با موفقیت حذف شد');
     }
+
+
+
 
 
 

@@ -82,7 +82,7 @@
 
                                 <td>{{ $permission->create}}</td>
                                 <td class="actions">
-                                    {{-- <a href="{{ route('admin.user.permission.edit', $permission) }}"   class="btn-gold btn-gold-sm">&#x270F;</a> --}}
+                                    <a href="{{ route('admin.user.permission.edit', $permission) }}"   class="btn-gold btn-gold-sm">&#x270F;</a>
                                     <form action="{{ route('admin.user.permission.destroy', $permission) }}" method="post"
                                         class="delete-form">
                                         @csrf
