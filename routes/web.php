@@ -34,8 +34,6 @@ require __DIR__.'/auth.php';
 Route::prefix('admin')->name('admin.')->group(function(){
 
        Route::get('/',DashboardCotroller::class)->name('dashboard');
-
-
          Route::prefix('market')->name('market.')->group(function(){
 
                Route::resource('category', CategoryController::class);
