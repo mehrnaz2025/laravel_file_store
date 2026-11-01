@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\WalletRequest;
 use App\Models\User;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
@@ -19,6 +20,20 @@ class WalletController extends Controller{
     public function create(){
         $users = User::all();
         return view('admin.user.wallet.create',compact('users'));
+    }
+
+
+    public function store(WalletRequest $request){
+
+          $inputs=$request->all();
+          $wallet = Wallet::where('user_id',$request->user_id)->first();
+
+            if ($wallet) {
+                    return to_route('admin.user.wallet.index')->with('error','  این کاربر کیف پول دارد ');
+            }
+
+            $wallet = Wallet::create($inputs);
+            return to_route('admin.user.wallet.index')->with('success','  کیف پول با موفقیت ایجاد شد ');
     }
 
 
