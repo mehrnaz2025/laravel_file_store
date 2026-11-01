@@ -5,10 +5,11 @@ use App\Http\Controllers\Admin\Content\MenuController;
 use App\Http\Controllers\Admin\Content\TagController;
 use App\Http\Controllers\Admin\DashboardCotroller;
 use App\Http\Controllers\Admin\Market\CategoryController;
+use App\Http\Controllers\Admin\Market\CoupanController;
 use App\Http\Controllers\Admin\Market\FileController;
 use App\Http\Controllers\Admin\Market\ProductController;
 use App\Http\Controllers\Admin\Setting\SettingController;
-use App\Http\Controllers\Admin\Market\CoupanController;
+use App\Http\Controllers\Admin\User\PermissionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -85,6 +86,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::post('/set/store',[SettingController::class,'setStore'])->name('set.store');
 
        });
+
+
+           Route::prefix('user')->name('user.')->group(function(){
+            Route::resource('permission',PermissionController::class);
+
+       });
+
 
 
 });
