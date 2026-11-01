@@ -22,7 +22,7 @@ class RoleRequest extends FormRequest
 
             }else{
                     return [
-                        'name'=>'required|min:1|max:100|regex:/^[a-z0-9A-Z -_]+$/u',
+                        //'name'=>'required|min:1|max:100|regex:/^[a-z0-9A-Z -_]+$/u',
                         'description'=>'required|min:2|max:1000|regex:/^[ا-یa-zA-z,،ئ.-يء ]+$/u',
                         'permissions.*' =>'string|exists:permissions,name'
                     ];

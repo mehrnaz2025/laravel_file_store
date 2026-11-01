@@ -32,6 +32,23 @@ class RoleController extends Controller{
 
     }
 
+
+    public function edit(Role $role){
+         $permissions=Permission::all();
+         return view('admin.user.role.edit',compact('role','permissions'));
+    }
+
+
+    public function update(RoleRequest $request,Role $role){
+        $inputs=$request->all();
+        $role->update($inputs);
+        $role->syncPermissions($request->permissions);
+        return to_route('admin.user.role.index')->with('success',' نقش  با موفقیت ویرایش شد');
+    }
+
+
+
+
     public function destroy(Role $role){
         $role->delete();
         return to_route('admin.user.role.index')->with('success','نقش با موفقیت حذف شد');
