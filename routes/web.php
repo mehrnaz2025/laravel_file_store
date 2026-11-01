@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Admin\User\PermissionController;
 use App\Http\Controllers\Admin\User\RoleController;
 use App\Http\Controllers\Admin\User\WalletController;
+use App\Http\Controllers\Admin\User\WalletTransactionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -92,6 +93,9 @@ Route::prefix('admin')->name('admin.')->group(function(){
             Route::resource('permission',PermissionController::class);
             Route::resource('role',RoleController::class);
             Route::resource('wallet',WalletController::class);
+            Route::post('/wallet/deposit', [WalletController::class, 'deposit']);
+            Route::post('/wallet/withdraw', [WalletController::class, 'withdraw']);
+            Route::resource('wallet-transactions', WalletTransactionController::class);
        });
 
 
