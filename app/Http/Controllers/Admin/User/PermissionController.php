@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PermissionController extends Controller
-{
+class PermissionController extends Controller{
     //
 }
