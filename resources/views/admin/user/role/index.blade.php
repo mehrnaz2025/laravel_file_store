@@ -34,7 +34,7 @@
                                 <td>{{ $role->description }}</td>
                                 <td><span class="badge-gold bg-info-g">  {{$role->permissions->count()}}  مجوز</span></td>
                                 <td> {{ $role->users->count()  }} </td>
-                                {{-- <td class="actions">
+                                <td class="actions">
                                     <a href="{{ route('admin.user.role.edit', $role) }}"   class="btn-gold btn-gold-sm">&#x270F;</a>
                                     <form action="{{ route('admin.user.role.destroy', $role) }}" method="post"
                                         class="delete-form">
@@ -42,7 +42,7 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn-gold btn-gold-sm btn-gold-danger delete-btn"
                                             style="font-size: 18px">&#x1F5D1;</button>
-                                    </form> --}}
+                                    </form>
                                 </td>
                             </tr>
                         @empty

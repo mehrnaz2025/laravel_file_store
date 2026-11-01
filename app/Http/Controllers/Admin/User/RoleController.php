@@ -32,5 +32,13 @@ class RoleController extends Controller{
 
     }
 
+    public function destroy(Role $role){
+        $role->delete();
+        return to_route('admin.user.role.index')->with('success','نقش با موفقیت حذف شد');
+    }
+
+
+
+
 
 }
