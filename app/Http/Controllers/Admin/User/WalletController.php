@@ -37,6 +37,19 @@ class WalletController extends Controller{
     }
 
 
+     public function edit(Wallet $wallet){
+        return view('admin.user.wallet.edit',compact('wallet'));
+    }
+
+     public function update(WalletRequest $request,Wallet $wallet){
+            $inputs=$request->all();
+            $wallet->update($inputs);
+            return to_route('admin.user.wallet.index')->with('success','  کیف پول با موفقیت ویرایش شد ');
+
+     }
+
+
+
 
 
 }
