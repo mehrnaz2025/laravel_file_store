@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Market\FileController;
 use App\Http\Controllers\Admin\Market\ProductController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Admin\User\PermissionController;
+use App\Http\Controllers\Admin\User\RoleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -90,7 +91,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
       Route::prefix('user')->name('user.')->group(function(){
             Route::resource('permission',PermissionController::class);
-
+            Route::resource('permission',RoleController::class);
        });
 
 
