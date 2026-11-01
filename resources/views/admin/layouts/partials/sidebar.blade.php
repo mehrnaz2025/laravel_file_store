@@ -96,14 +96,12 @@
                 <span class="icon" style="font-size:14px;"> &#128272;</span>
                 <span class="icon" style="font-size:8px;"> &#128273; </span>
             </span>
-
-            <a href="{{ route('admin.user.permission.index') }}"
-                style="text-decoration: none ; color:antiquewhite">مجوزها</a>
+            <a href="{{ route('admin.user.permission.index') }}"  style="text-decoration: none ; color:antiquewhite">مجوزها</a>
         </div>
 
         <div class="menu-item">
             <span class="icon" style="font-size:20px;">&#127917; </span>
-            <a href="#" style="text-decoration: none ; color:antiquewhite">نقش ها</a>
+            <a href="{{ route('admin.user.role.index') }}" style="text-decoration: none ; color:antiquewhite">نقش ها</a>
         </div>
 
 
