@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\RoleRequest;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -22,7 +23,7 @@ class RoleController extends Controller{
     }
 
 
-     public function store(Request $request){
+     public function store(RoleRequest $request){
 
             $inputs=$request->all();
             $role=Role::create($inputs);
