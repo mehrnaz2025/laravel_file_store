@@ -88,7 +88,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
        });
 
 
-           Route::prefix('user')->name('user.')->group(function(){
+      Route::prefix('user')->name('user.')->group(function(){
             Route::resource('permission',PermissionController::class);
 
        });
