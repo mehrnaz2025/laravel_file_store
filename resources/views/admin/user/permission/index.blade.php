@@ -82,14 +82,14 @@
 
                                 <td>{{ $permission->create}}</td>
                                 <td class="actions">
-                                    {{-- <a href="{{ route('admin.market.permission.edit', $permission) }}"   class="btn-gold btn-gold-sm">&#x270F;</a> --}}
-                                    {{-- <form action="{{ route('admin.market.permission.destroy', $permission) }}" method="post"
+                                    {{-- <a href="{{ route('admin.user.permission.edit', $permission) }}"   class="btn-gold btn-gold-sm">&#x270F;</a> --}}
+                                    <form action="{{ route('admin.user.permission.destroy', $permission) }}" method="post"
                                         class="delete-form">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn-gold btn-gold-sm btn-gold-danger delete-btn"
-                                            style="font-size: 20px">&#x1F5D1;</button>
-                                    </form> --}}
+                                            style="font-size: 18px">&#x1F5D1;</button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty

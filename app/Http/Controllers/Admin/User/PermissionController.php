@@ -30,6 +30,13 @@ class PermissionController extends Controller{
 
 
 
+   public function destroy(Permission $permission){
+        $permission->delete();
+        return to_route('admin.user.permission.index')->with('success','مجوز دسترسی با موفقیت حذف شد');
+    }
+
+
+
 
 
 }
