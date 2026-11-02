@@ -109,6 +109,12 @@
             <a href="{{ route('admin.user.wallet.index') }}" style="text-decoration: none ; color:antiquewhite"> کیف پول</a>
         </div>
 
+
+        <div class="menu-item">
+            <span class="icon" style="font-size:20px;">&#x1F4C6; </span>
+            <a href="{{ route('admin.user.wallet-transactions.index') }}"  style="text-decoration: none ; color:antiquewhite">  تاریخچه تراکنش ها </a>
+        </div>
+
         <!--  بخش تنظیمات  -->
         <div class="sidebar-group-title">
             <span class="group-icon" style="font-size: 20px;">&#9965;</span>
