@@ -17,17 +17,17 @@
 
         <!-- دکمه‌های فیلتر تراکنش‌ها -->
         <div class="status-filter-buttons">
-            <a type="button" class="status-btn" onclick="filterByStatus(this, '')">
+            <a type="button" class="status-btn" onclick="filterByStatus(this, '')"  style="text-decoration: none;>
                 <span class="btn-icon">📋</span>
                 <span>همه تراکنش‌ها</span>
                 <span class="btn-count">4</span>
             </a>
-            <a type="button" class="status-btn" onclick="filterByStatus(this, '')">
+            <a type="button" class="status-btn" onclick="filterByStatus(this, '')"  style="text-decoration: none;>
                 <span class="btn-icon">🟢</span>
                 <span>شارژ</span>
                 <span class="btn-count">2</span>
             </a>
-            <a type="button" class="status-btn" onclick="filterByStatus(this, '')">
+            <a type="button" class="status-btn" onclick="filterByStatus(this, '')"  style="text-decoration: none;>
                 <span class="btn-icon">🔴</span>
                 <span>برداشت</span>
                 <span class="btn-count">2</span>
