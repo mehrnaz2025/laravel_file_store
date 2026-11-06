@@ -43,7 +43,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::get('/active-category',[CategoryController::class,'activeStatus'])->name('category.active-category');
                Route::get('/inactive-category',[CategoryController::class,'inactiveStatus'])->name('category.inactive-category');
 
-               //product routes
+              //product routes
                Route::resource('product', ProductController::class);
                Route::get('/active-product',[ProductController::class,'activeStatus'])->name('product.active-product');
                Route::get('/inactive-product',[ProductController::class,'inactiveStatus'])->name('product.inactive-product');
@@ -64,15 +64,15 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::get('/inactive-coupan',[CoupanController::class,'inactiveStatus'])->name('coupan.inactive-coupan');
 
               //comment
-                Route::get('/comment', [CommentController::class, 'index'])->name('admin.market.comment.index');
-                Route::get('comment/show/{comment}', [CommentController::class, 'show'])->name('admin.market.comment.show');
-                Route::post('comment/store', [CommentController::class, 'store'])->name('admin.market.comment.store');
-                Route::get('comment/edit/{id}', [CommentController::class, 'edit'])->name('admin.market.comment.edit');
-                Route::put('comment/update/{id}', [CommentController::class, 'update'])->name('admin.market.comment.update');
-                Route::delete('comment/destroy/{id}', [CommentController::class, 'destroy'])->name('admin.market.comment.destroy');
-                Route::get('comment/approved/{comment}', [CommentController::class, 'approved'])->name('admin.market.comment.approved');
-                Route::get('comment/status/{comment}', [CommentController::class, 'status'])->name('admin.market.comment.status');
-                Route::post('comment/answer/{comment}', [CommentController::class, 'answer'])->name('admin.market.comment.answer');
+                Route::get('/comment', [CommentController::class, 'index'])->name('comment.index');
+                Route::get('comment/show/{comment}', [CommentController::class, 'show'])->name('comment.show');
+                // Route::post('comment/store', [CommentController::class, 'store'])->name('comment.store');
+                // Route::get('comment/edit/{id}', [CommentController::class, 'edit'])->name('comment.edit');
+                // Route::put('comment/update/{id}', [CommentController::class, 'update'])->name('comment.update');
+                // Route::delete('comment/destroy/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
+                Route::get('comment/approved/{comment}', [CommentController::class, 'approved'])->name('comment.approved');
+                Route::get('comment/status/{comment}', [CommentController::class, 'status'])->name('comment.status');
+                Route::post('comment/answer/{comment}', [CommentController::class, 'answer'])->name('comment.answer');
 
 
        });

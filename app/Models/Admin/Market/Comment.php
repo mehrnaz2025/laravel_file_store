@@ -6,6 +6,7 @@ use App\Models\User;
 use Dyrynda\Database\Support\CascadeSoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 use Morilog\Jalali\CalendarUtils;
 use Morilog\Jalali\Jalalian;
 
@@ -36,10 +37,15 @@ class Comment extends Model{
     }
 
 
-       //accessor
-        public function getCreateAttribute(){
-            $persian=Jalalian::forge($this->created_at)->format('Y/m/d');
-            return CalendarUtils::convertNumbers($persian);
+    //accessor
+    public function getCreateAttribute(){
+        $persian=Jalalian::forge($this->created_at)->format('Y/m/d');
+        return CalendarUtils::convertNumbers($persian);
+    }
+
+    //scope method
+           public function scopeAllComments(Builder $query){
+           return $query;
         }
 
 

@@ -13,7 +13,7 @@ class CommentController extends Controller{
         foreach ($unSeenComments as $unSeenComment){
             $unSeenComment->seen = 1;
         }
-
+        // $comments=Comment::query()->whereNull('parent_id')->latest()->paginate(10);
         $comments = Comment::latest()->where('commentable_type', 'App\Models\Market\Product')->paginate(3);
         return view('admin.market.comment.index', compact('comments'));
 
