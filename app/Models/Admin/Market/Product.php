@@ -13,12 +13,11 @@ use Morilog\Jalali\Jalalian;
 
 class Product extends Model{
 
-    use SoftDeletes,Sluggable;
-    // use SoftDeletes,Sluggable,CascadeSoftDeletes;
+    use SoftDeletes,Sluggable,CascadeSoftDeletes;
 
       protected $table='products';
       protected $guarded=['id'];
-    //   protected $cascadeDeletes=['files'];
+      protected $cascadeDeletes=['files'];
 
 
         public function sluggable(): array {
