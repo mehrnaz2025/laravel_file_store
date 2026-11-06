@@ -15,7 +15,7 @@ return new class extends Migration{
             $table->unsignedBigInteger('commentable_id');
             $table->string('commentable_type');
             $table->tinyInteger('seen')->default(0)->comment('0 => unseen, 1 => seen');
-            $table->tinyInteger('approved')->default(0)->comment('0 => not approved, 1 => approved');
+            $table->tinyInteger('approved')->default(0)->comment('0 => wait, 1 =>approved,2=>not approved');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
             $table->softDeletes();

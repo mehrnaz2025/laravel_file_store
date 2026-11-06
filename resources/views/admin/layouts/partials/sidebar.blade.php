@@ -79,6 +79,11 @@
                 ها</a>
         </div>
 
+        <div class="menu-item">
+            <span class="" style="font-size:20px;color:white;"> &#128173;</span>
+            <a href="{{ route('admin.market.comment.index') }}" style="text-decoration: none ;color:antiquewhite">نظرات</a>
+        </div>
+
 
         <!--  بخش کاربران  -->
         <div class="sidebar-group-title">
