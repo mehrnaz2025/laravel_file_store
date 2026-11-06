@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Content\MenuController;
 use App\Http\Controllers\Admin\Content\TagController;
 use App\Http\Controllers\Admin\DashboardCotroller;
 use App\Http\Controllers\Admin\Market\CategoryController;
+use App\Http\Controllers\Admin\Market\CommentController;
 use App\Http\Controllers\Admin\Market\CoupanController;
 use App\Http\Controllers\Admin\Market\FileController;
 use App\Http\Controllers\Admin\Market\ProductController;
@@ -62,6 +63,17 @@ Route::prefix('admin')->name('admin.')->group(function(){
                Route::get('/active-coupan',[CoupanController::class,'activeStatus'])->name('coupan.active-coupan');
                Route::get('/inactive-coupan',[CoupanController::class,'inactiveStatus'])->name('coupan.inactive-coupan');
 
+             //comment
+            Route::get('/comment', [CommentController::class, 'index'])->name('admin.market.comment.index');
+            Route::get('comment/show/{comment}', [CommentController::class, 'show'])->name('admin.market.comment.show');
+            Route::post('comment/store', [CommentController::class, 'store'])->name('admin.market.comment.store');
+            Route::get('comment/edit/{id}', [CommentController::class, 'edit'])->name('admin.market.comment.edit');
+            Route::put('comment/update/{id}', [CommentController::class, 'update'])->name('admin.market.comment.update');
+            Route::delete('comment/destroy/{id}', [CommentController::class, 'destroy'])->name('admin.market.comment.destroy');
+            Route::get('comment/approved/{comment}', [CommentController::class, 'approved'])->name('admin.market.comment.approved');
+            Route::get('comment/status/{comment}', [CommentController::class, 'status'])->name('admin.market.comment.status');
+            Route::post('comment/answer/{comment}', [CommentController::class, 'answer'])->name('admin.market.comment.answer');
+
 
        });
 
@@ -89,15 +101,19 @@ Route::prefix('admin')->name('admin.')->group(function(){
        });
 
 
-      Route::prefix('user')->name('user.')->group(function(){
-            Route::resource('permission',PermissionController::class);
-            Route::resource('role',RoleController::class);
-            Route::resource('wallet',WalletController::class);
-            Route::post('/wallet/deposit', [WalletController::class, 'deposit']);
-            Route::post('/wallet/withdraw', [WalletController::class, 'withdraw']);
-            Route::resource('wallet-transactions', WalletTransactionController::class);
+        Route::prefix('user')->name('user.')->group(function(){
+                Route::resource('permission',PermissionController::class);
+                Route::resource('role',RoleController::class);
+                Route::resource('wallet',WalletController::class);
+                Route::post('/wallet/deposit', [WalletController::class, 'deposit']);
+                Route::post('/wallet/withdraw', [WalletController::class, 'withdraw']);
+                Route::resource('wallet-transactions', WalletTransactionController::class);
+        });
+
+
+
+
+
+
+
        });
-
-
-
-});

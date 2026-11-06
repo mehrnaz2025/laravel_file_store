@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Market;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
-{
-    //
+class CommentController extends Controller{
+    
+
 }
