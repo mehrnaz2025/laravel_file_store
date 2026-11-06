@@ -39,13 +39,29 @@ class Comment extends Model{
 
     //accessor
     public function getCreateAttribute(){
-        $persian=Jalalian::forge($this->created_at)->format('Y/m/d');
+        $persian=Jalalian::forge($this->created_at)->format('Y/m/d H:i');
         return CalendarUtils::convertNumbers($persian);
     }
 
     //scope method
+
+
+        public function scopeWaitComment(Builder $query){
+            return $query->where('appr1oved',0 );
+        }
+
+        public function scopeApprovedComment(Builder $query){
+            return $query->whereNull('parent_id')->where('approved', 1);
+        }
+
+
+        public function  scopeUnApprovedComment(Builder $query){
+              return $query->whereNull('parent_id')->where('approved', 2);
+        }
+
+
            public function scopeAllComments(Builder $query){
-           return $query;
+           return $query->whereNull('parent_id');
         }
 
 

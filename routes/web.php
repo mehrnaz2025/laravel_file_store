@@ -66,13 +66,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
               //comment
                 Route::get('/comment', [CommentController::class, 'index'])->name('comment.index');
                 Route::get('comment/show/{comment}', [CommentController::class, 'show'])->name('comment.show');
-                // Route::post('comment/store', [CommentController::class, 'store'])->name('comment.store');
-                // Route::get('comment/edit/{id}', [CommentController::class, 'edit'])->name('comment.edit');
-                // Route::put('comment/update/{id}', [CommentController::class, 'update'])->name('comment.update');
-                // Route::delete('comment/destroy/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
-                Route::get('comment/approved/{comment}', [CommentController::class, 'approved'])->name('comment.approved');
-                Route::get('comment/status/{comment}', [CommentController::class, 'status'])->name('comment.status');
-                Route::post('comment/answer/{comment}', [CommentController::class, 'answer'])->name('comment.answer');
+                Route::get('comment-approved/{comment}', [CommentController::class, 'approved'])->name('comment.approved');
+                Route::get('comment-unApproved/{comment}', [CommentController::class, 'unApproved'])->name('comment.unApproved');
+                Route::post('comment-answer/{comment}', [CommentController::class, 'answer'])->name('comment.answer');
+                Route::get('comment/all-approved',[CommentController::class,'allApproved'])->name('comment.all-approved');
+                Route::get('comment/all-unApproved',[CommentController::class,'allUnApproved'])->name('comment.all-unApproved');
 
 
        });

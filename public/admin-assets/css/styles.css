@@ -452,20 +452,36 @@ tbody tr:hover { background: rgba(212,175,55,0.05); }
   background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.3);
   border-radius: 16px; padding: 25px; margin-bottom: 25px; position: relative;
 }
+
+.original-item-comment {
+  background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 16px; padding: 25px; margin-bottom: 25px; position: relative;
+}
+
 .original-item::before {
-  content: '💬 نظر/تیکت اصلی'; position: absolute; top: -12px; right: 20px;
+  content: '💬 تیکت اصلی'; position: absolute; top: -12px; right: 20px;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: #000; padding: 4px 14px; border-radius: 20px;
   font-size: 11px; font-weight: bold;
 }
+
+.original-item-comment::before {
+  content: '💬 نظر '; position: absolute; top: -12px; right: 20px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #000; padding: 4px 14px; border-radius: 20px;
+  font-size: 11px; font-weight: bold;
+}
+
 .original-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
 .original-item-user { display: flex; align-items: center; gap: 12px; }
+
 .user-avatar-sm {
   width: 40px; height: 40px; border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), var(--silver));
   display: flex; align-items: center; justify-content: center;
   font-weight: bold; color: #000; font-size: 14px;
 }
+
 .user-name { color: var(--gold-light); font-weight: 600; font-size: 14px; }
 .user-date { color: var(--silver); font-size: 11px; }
 .original-item-content {
@@ -473,6 +489,7 @@ tbody tr:hover { background: rgba(212,175,55,0.05); }
   padding: 15px; background: rgba(0,0,0,0.3);
   border-radius: 10px; margin-bottom: 15px;
 }
+
 .original-item-meta { display: flex; gap: 15px; flex-wrap: wrap; font-size: 12px; color: var(--silver); }
 .original-item-meta span { display: inline-flex; align-items: center; gap: 5px; }
 
@@ -483,6 +500,7 @@ tbody tr:hover { background: rgba(212,175,55,0.05); }
   color: var(--gold-light); font-size: 16px; margin-bottom: 20px;
   display: flex; align-items: center; gap: 10px;
 }
+
 .replies-section h4::before {
   content: ''; width: 4px; height: 20px;
   background: linear-gradient(var(--gold), var(--silver)); border-radius: 2px;
@@ -501,6 +519,7 @@ tbody tr:hover { background: rgba(212,175,55,0.05); }
   background: rgba(212,175,55,0.03);
   margin-right: 50px;
 }
+
 .reply-item.admin:hover { background: rgba(212,175,55,0.06); }
 .reply-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .reply-user { display: flex; align-items: center; gap: 10px; }
@@ -509,6 +528,7 @@ tbody tr:hover { background: rgba(212,175,55,0.05); }
   display: flex; align-items: center; justify-content: center;
   font-weight: bold; font-size: 13px;
 }
+
 .reply-avatar.user { background: linear-gradient(135deg, #3498db, #5dade2); color: #fff; }
 .reply-avatar.admin { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #000; }
 .reply-name { font-weight: 600; font-size: 13px; color: #fff; }

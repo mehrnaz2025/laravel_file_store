@@ -16,23 +16,23 @@
 
         <!-- دکمه‌های فیلتر وضعیت  نظرات -->
         <div class="status-filter-buttons">
-          <a href="{{route('admin.market.comment.index')}}" class="status-btn" onclick="filterByStatus(this, '')" style="text-decoration: none;>
+          <a href="{{route('admin.market.comment.index')}}" class="status-btn" onclick="filterByStatus(this, '')" style="text-decoration: none;">
             <span class="btn-icon" style="font-size: 25px;">&#x1F4AD;</span>
             <span>همه نظرات</span>
             <span class="btn-count">  {{App\Models\Admin\market\Comment::allComments()->count() }}  </span>
           </a>
 
-          <a href="" class="status-btn"   data-filter="success" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
+          <a  href="{{ route('admin.market.comment.all-approved') }}" class="status-btn"   data-filter="success" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
             <span class="btn-icon">✓</span>
-            <span>نظرات تایید نشده</span>
-            <span class="btn-count"> - </span>
+            <span>نظرات تایید شده</span>
+            <span class="btn-count"> {{App\Models\Admin\market\Comment::approvedComment()->count() }} </span>
           </a>
 
 
-          <a href="" class="status-btn" data-filter="failed" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
+          <a href="{{ route('admin.market.comment.all-unApproved') }}" class="status-btn" data-filter="failed" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
             <span class="btn-icon">✗</span>
-            <span>نظرات تایید شده</span>
-            <span class="btn-count"> - </span>
+            <span>نظرات رد شده</span>
+            <span class="btn-count">  {{App\Models\Admin\market\Comment::unApprovedComment()->count() }} </span>
           </a>
         </div>
 
@@ -74,11 +74,6 @@
 
                             <td class="actions">
                                 <a href="{{route('admin.market.comment.show',$comment)}}" class="btn-gold btn-gold-sm btn-gold-info" title="پاسخ ها"  style="font-size:17px;color:white;"> &#x1F4AD; </a>
-                                @if($comment->approved == 0)
-                                     <a href="{{ route('admin.market.comment.approved', $comment->id)}} "class="btn-gold btn-gold-sm btn-gold-success" title="تایید">  &#10004;   </a>
-                                @elseif($comment->approved == 1)
-                                    <a href="{{ route('admin.market.comment.approved', $comment->id)}} "class="btn-gold btn-gold-sm btn-gold-danger" title="رد">   &#10008;   </a>
-                                @endif
                             </td>
 
                         </tr>
