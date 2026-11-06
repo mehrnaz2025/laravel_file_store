@@ -28,6 +28,12 @@ class Product extends Model{
 
 
        //relations method
+
+
+        public function comments(){
+            return $this->morphMany(Comment::class, 'commentable');
+        }
+        
         public function category(){
             return $this->belongsTo(Category::class,'category_id','id');
         }
