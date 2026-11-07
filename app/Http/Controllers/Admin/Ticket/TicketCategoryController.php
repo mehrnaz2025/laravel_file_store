@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Ticket;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Ticket\TicketCategoryRequest;
 use App\Models\Admin\Ticket\TicketCategory;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,14 @@ class TicketCategoryController extends Controller{
         public function create(){
             return view('admin.ticket.ticket-category.create');
         }
+
+
+        public function store(TicketCategoryRequest $request){
+            $inputs = $request->all();
+            TicketCategory::query()->create($inputs);
+            return to_route('admin.tickets.ticket-category.index')->with('success', 'دسته بندی تیکت با موفقیت ایجاد شد');
+        }
+
 
 
 
