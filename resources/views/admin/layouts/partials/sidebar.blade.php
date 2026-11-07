@@ -120,6 +120,33 @@
             <a href="{{ route('admin.user.wallet-transactions.index') }}"  style="text-decoration: none ; color:antiquewhite">  تاریخچه تراکنش ها </a>
         </div>
 
+
+
+        <!--  بخش تیکت ها  -->
+        <div class="sidebar-group-title">
+            <span class="group-icon" style="font-size:18px;">&#128232;</span>
+            <span class="group-text">بخش تیکت ها</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="icon" style="font-size:22px;">  &#128451; </span>
+            <a href="{{ route('admin.tickets.ticket-category.index') }}" style="text-decoration: none ;color:antiquewhite">دسته بندی </a>
+        </div>
+
+        <div class="menu-item">
+            <span class="icon" style="font-size:22px;"> &#128104;&#8205;&#128188; </span>
+            <a href="{{ route('admin.tickets.ticket-admin.index') }}" style="text-decoration: none ;color:antiquewhite">   ادمین تیکت </a>
+        </div>
+
+       <div class="menu-item">
+            <span class="icon" style="font-size:22px;"> &#x1F3AB; </span>
+            <a href="{{ route('admin.tickets.ticket.index') }}" style="text-decoration: none ;color:antiquewhite">    تیکت ها</a>
+        </div>
+
+
+
+
+
         <!--  بخش تنظیمات  -->
         <div class="sidebar-group-title">
             <span class="group-icon" style="font-size: 20px;">&#9965;</span>
