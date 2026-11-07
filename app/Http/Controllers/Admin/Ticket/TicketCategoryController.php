@@ -21,11 +21,15 @@ class TicketCategoryController extends Controller{
 
 
         public function store(TicketCategoryRequest $request){
-            $inputs = $request->all();
-            TicketCategory::query()->create($inputs);
-            return to_route('admin.tickets.ticket-category.index')->with('success', 'دسته بندی تیکت با موفقیت ایجاد شد');
+             $inputs = $request->all();
+             TicketCategory::query()->create($inputs);
+             return to_route('admin.tickets.ticket-category.index')->with('success', 'دسته بندی تیکت با موفقیت ایجاد شد');
         }
 
+
+        public function edit(TicketCategory $ticketCategory){
+             return view('admin.ticket.ticket-category.edit', compact('ticketCategory'));
+        }
 
 
 
