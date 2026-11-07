@@ -13,4 +13,10 @@ class TicketCategoryController extends Controller{
             return view('admin.ticket.ticket-category.index', compact('categories'));
     }
 
+
+    public function create(){
+        return view('admin.ticket.ticket-category.create');
+    }
+
+
 }
