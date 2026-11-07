@@ -32,6 +32,14 @@ class TicketCategoryController extends Controller{
         }
 
 
+        public function update(TicketCategoryRequest $request, TicketCategory $ticketCategory){
+              $inputs = $request->all();
+              $ticketCategory->update($inputs);
+              return to_route('admin.tickets.ticket-category.index')->with('success', 'دسته بندی تیکت با موفقیت ویرایش شد');
+        }
+
+
+
 
 
 }
