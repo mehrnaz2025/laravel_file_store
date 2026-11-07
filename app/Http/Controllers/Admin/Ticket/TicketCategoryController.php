@@ -39,6 +39,13 @@ class TicketCategoryController extends Controller{
         }
 
 
+        public function destroy(TicketCategory $ticketCategory){
+                $ticketCategory->delete();
+                return back()->with('success', 'دسته بندی تیکت با موفقیت حذف شد');
+        }
+
+
+
 
 
 
