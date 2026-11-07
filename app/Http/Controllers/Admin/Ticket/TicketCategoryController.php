@@ -8,15 +8,17 @@ use Illuminate\Http\Request;
 
 class TicketCategoryController extends Controller{
 
-      public function index(){
+       public function index(){
             $categories =TicketCategory::query()->latest()->paginate(5);
             return view('admin.ticket.ticket-category.index', compact('categories'));
-    }
+       }
 
 
-    public function create(){
-        return view('admin.ticket.ticket-category.create');
-    }
+        public function create(){
+            return view('admin.ticket.ticket-category.create');
+        }
+
+
 
 
 }
