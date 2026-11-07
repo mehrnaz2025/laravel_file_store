@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\Market\CoupanController;
 use App\Http\Controllers\Admin\Market\FileController;
 use App\Http\Controllers\Admin\Market\ProductController;
 use App\Http\Controllers\Admin\Setting\SettingController;
+use App\Http\Controllers\Admin\Ticket\TicketAdminController;
+use App\Http\Controllers\Admin\Ticket\TicketCategoryController;
+use App\Http\Controllers\Admin\Ticket\TicketController;
 use App\Http\Controllers\Admin\User\PermissionController;
 use App\Http\Controllers\Admin\User\RoleController;
 use App\Http\Controllers\Admin\User\WalletController;
@@ -37,7 +40,7 @@ require __DIR__.'/auth.php';
 Route::prefix('admin')->name('admin.')->group(function(){
 
        Route::get('/',DashboardCotroller::class)->name('dashboard');
-         Route::prefix('market')->name('market.')->group(function(){
+       Route::prefix('market')->name('market.')->group(function(){
 
                Route::resource('category', CategoryController::class);
                Route::get('/active-category',[CategoryController::class,'activeStatus'])->name('category.active-category');
@@ -109,7 +112,14 @@ Route::prefix('admin')->name('admin.')->group(function(){
         });
 
 
-
+        //ticket routes
+        Route::prefix('tickets')->name('tickets.')->group(function () {
+                Route::resource('ticket-category', TicketCategoryController::class);
+                Route::resource('ticket-admin', TicketAdminController::class);
+                Route::get('ticket-admin/change-type-user/{admin}', [TicketAdminController::class,'changeUserType'])->name('ticket-admin.change-type-user');
+                Route::resource('ticket', TicketController::class);
+                Route::get('/change-status/{ticket}',[TicketController::class,'changeStatus'])->name('ticket.change-status');
+        });
 
 
 
