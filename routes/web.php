@@ -127,6 +127,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
                 Route::resource('ticket-admin', TicketAdminController::class);
                 Route::get('ticket-admin/change-type-user/{admin}', [TicketAdminController::class,'changeUserType'])->name('ticket-admin.change-type-user');
+                
                 Route::resource('ticket', TicketController::class);
                 Route::get('/change-status/{ticket}',[TicketController::class,'changeStatus'])->name('ticket.change-status');
         });
