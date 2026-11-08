@@ -144,9 +144,6 @@
         </div>
 
 
-
-
-
         <!--  بخش تنظیمات  -->
         <div class="sidebar-group-title">
             <span class="group-icon" style="font-size: 20px;">&#9965;</span>
@@ -157,10 +154,6 @@
             <a href="{{ route('admin.setting.index') }}" style="text-decoration: none ; color:antiquewhite;"> تنظیمات
             </a>
         </div>
-
-
-
-
 
     </nav>
 </aside>

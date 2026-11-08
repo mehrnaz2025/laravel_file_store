@@ -114,7 +114,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
         //ticket routes
         Route::prefix('tickets')->name('tickets.')->group(function () {
+
                 Route::resource('ticket-category', TicketCategoryController::class);
+                Route::get('ticket-category-active',[TicketCategoryController::class,'activeStatus'])->name('ticket-category.active');
+                Route::get('ticket-category-inactive',[TicketCategoryController::class,'inactiveStatus'])->name('ticket-category.inactive');
+
                 Route::resource('ticket-admin', TicketAdminController::class);
                 Route::get('ticket-admin/change-type-user/{admin}', [TicketAdminController::class,'changeUserType'])->name('ticket-admin.change-type-user');
                 Route::resource('ticket', TicketController::class);

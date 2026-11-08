@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class TicketCategoryController extends Controller{
 
        public function index(){
+
             $categories =TicketCategory::query()->latest()->paginate(5);
             return view('admin.ticket.ticket-category.index', compact('categories'));
        }
@@ -44,6 +45,24 @@ class TicketCategoryController extends Controller{
                 return back()->with('success', 'دسته بندی تیکت با موفقیت حذف شد');
         }
 
+
+
+        public function activeStatus(){
+            $categories=TicketCategory::query()->activeCategory()->latest()->paginate(12);
+           return view('admin.ticket.ticket-category.index', compact('categories'));
+        }
+
+
+        public function inactiveStatus(){
+
+            $categories=TicketCategory::query()->inactiveCategory()->latest()->paginate(12);
+            return view('admin.ticket.ticket-category.index', compact('categories'));
+        }
+
+
+        public function show(){
+
+        }
 
 
 
