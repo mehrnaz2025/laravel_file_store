@@ -1,20 +1,20 @@
 @extends('admin.layouts.master')
-@section('title','ایجاد  دسته بندی تیکت ')
+@section('title','ایجاد اولویت تیکت ')
 
 
 @section('content')
 
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class=""> <span style="font-size:22px;"> &#128451; </span> افزودن دسته بندی تیکت</h5>
+                <h5 class=""> <span style="font-size:22px;"> &#128451; </span> افزودن اولویت تیکت</h5>
             </div>
-            <form action="{{route('admin.tickets.ticket-category.store')}}" method="post">
+            <form action="{{route('admin.ticket.ticket-priority.store')}}" method="post">
                 @csrf
                 <div class="modal-body">
 
                     <div class="row">
                         <div class="mb-3 col col-md-7">
-                                <label class="form-label">نام دسته</label>
+                                <label class="form-label">  عنوان اولویت تیکت </label>
                                 <input type="text" class="form-control" name="name" value="{{old('name')}}">
                                @error('name')
                                  <div class="p-1 my-1 text-danger rounded "><strong>{{$message}}</strong></div>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                     <a href="{{ route('admin.tickets.ticket-category.index') }}"  class="btn-gold btn-gold-danger mx-2">برگشت</a>
+                     <a href="{{ route('admin.ticket.ticket-priority.index') }}"  class="btn-gold btn-gold-danger mx-2">برگشت</a>
                     <button type="submit" class="btn-gold btn-gold-success">&#x1F4BE; ذخیره</button>
                 </div>
             </form>

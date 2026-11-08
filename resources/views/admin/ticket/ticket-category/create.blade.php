@@ -8,7 +8,7 @@
             <div class="modal-header">
                 <h5 class=""> <span style="font-size:22px;"> &#128451; </span> افزودن دسته بندی تیکت</h5>
             </div>
-            <form action="{{route('admin.tickets.ticket-category.store')}}" method="post">
+            <form action="{{route('admin.ticket.ticket-category.store')}}" method="post">
                 @csrf
                 <div class="modal-body">
 
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                     <a href="{{ route('admin.tickets.ticket-category.index') }}"  class="btn-gold btn-gold-danger mx-2">برگشت</a>
+                     <a href="{{ route('admin.ticket.ticket-category.index') }}"  class="btn-gold btn-gold-danger mx-2">برگشت</a>
                     <button type="submit" class="btn-gold btn-gold-success">&#x1F4BE; ذخیره</button>
                 </div>
             </form>
