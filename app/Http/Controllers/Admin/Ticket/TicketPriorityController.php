@@ -22,19 +22,19 @@ class TicketPriorityController extends Controller{
         public function store(Request $request){
              $inputs = $request->all();
              TicketPriority::query()->create($inputs);
-             return to_route('admin.tickets.ticket-priority.index')->with('success', 'اولویت تیکت با موفقیت ایجاد شد');
+             return to_route('admin.ticket.ticket-priority.index')->with('success', 'اولویت تیکت با موفقیت ایجاد شد');
         }
 
 
         public function edit(TicketPriority $ticketPriority){
-             return view('admin.ticket.ticket-priority.edit','ticketPriority');
+             return view('admin.ticket.ticket-priority.edit',compact('ticketPriority'));
         }
 
 
         public function update(Request $request, TicketPriority $ticketPriority){
               $inputs = $request->all();
               $ticketPriority->update($inputs);
-              return to_route('admin.tickets.ticket-category.index')->with('success', ' اولویت تیکت با موفقیت ویرایش شد');
+              return to_route('admin.ticket.ticket-priority.index')->with('success', ' اولویت تیکت با موفقیت ویرایش شد');
         }
 
 

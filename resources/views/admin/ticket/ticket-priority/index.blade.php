@@ -64,8 +64,8 @@
                              <td>{{$ticketPriority->create}}</td>
 
                             <td class="actions">
-                                <a href="{{route('admin.ticket.ticket-ticketPriority.edit',$ticketPriority)}}" class="btn-gold btn-gold-sm">&#x270F;</a>
-                                    <form action="{{ route('admin.ticket.ticket-ticketPriority.destroy', $ticketPriority) }}" method="post" class="delete-form">
+                                <a href="{{route('admin.ticket.ticket-priority.edit',$ticketPriority)}}" class="btn-gold btn-gold-sm">&#x270F;</a>
+                                    <form action="{{ route('admin.ticket.ticket-priority.destroy', $ticketPriority) }}" method="post" class="delete-form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-gold btn-gold-sm btn-gold-danger delete-btn"

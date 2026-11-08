@@ -133,6 +133,12 @@
             <a href="{{ route('admin.ticket.ticket-category.index') }}" style="text-decoration: none ;color:antiquewhite">دسته بندی </a>
         </div>
 
+
+        <div class="menu-item">
+            <span class="icon" style="font-size:20px;"> &#128681; </span>
+            <a href="{{ route('admin.ticket.ticket-priority.index') }}" style="text-decoration: none ;color:antiquewhite"> اولویت تیکت </a>
+        </div>
+
         <div class="menu-item">
             <span class="icon" style="font-size:22px;"> &#128104;&#8205;&#128188; </span>
             <a href="{{ route('admin.ticket.ticket-admin.index') }}" style="text-decoration: none ;color:antiquewhite">   ادمین تیکت </a>
