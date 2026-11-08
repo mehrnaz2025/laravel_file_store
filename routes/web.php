@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Admin\Ticket\TicketAdminController;
 use App\Http\Controllers\Admin\Ticket\TicketCategoryController;
 use App\Http\Controllers\Admin\Ticket\TicketController;
+use App\Http\Controllers\Admin\Ticket\TicketPriorityController;
 use App\Http\Controllers\Admin\User\PermissionController;
 use App\Http\Controllers\Admin\User\RoleController;
 use App\Http\Controllers\Admin\User\WalletController;
@@ -118,6 +119,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
                 Route::resource('ticket-category', TicketCategoryController::class);
                 Route::get('ticket-category-active',[TicketCategoryController::class,'activeStatus'])->name('ticket-category.active');
                 Route::get('ticket-category-inactive',[TicketCategoryController::class,'inactiveStatus'])->name('ticket-category.inactive');
+
+                Route::resource('ticket-category', TicketPriorityController::class);
+                Route::get('ticket-priority-active',[TicketPriorityController::class,'activeStatus'])->name('ticket-priority.active');
+                Route::get('ticket-priority-inactive',[TicketPriorityController::class,'inactiveStatus'])->name('ticket-priority.inactive');
+
 
                 Route::resource('ticket-admin', TicketAdminController::class);
                 Route::get('ticket-admin/change-type-user/{admin}', [TicketAdminController::class,'changeUserType'])->name('ticket-admin.change-type-user');
