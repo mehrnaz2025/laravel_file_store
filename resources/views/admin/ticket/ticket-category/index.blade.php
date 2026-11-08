@@ -7,7 +7,7 @@
         <div class="glass">
             <div class="section-header">
                 <h3> <span   style="font-size:28px;">&#128451;</span>  دسته‌بندی‌ها</h3>
-                <a   href="{{route('admin.tickets.ticket-category.create')}}"  class="btn-gold">➕ افزودن دسته تیکت</a>
+                <a   href="{{route('admin.ticket.ticket-category.create')}}"  class="btn-gold">➕ افزودن دسته تیکت</a>
             </div>
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="جستجو در دسته بندی تیکت ها..."
@@ -16,20 +16,20 @@
 
         <!-- دکمه‌های فیلتر وضعیت دسته بندی تیکت ها -->
         <div class="status-filter-buttons">
-          <a href="{{route('admin.tickets.ticket-category.index')}}" class="status-btn" onclick="filterByStatus(this, '')" style="text-decoration: none;"">
+          <a href="{{route('admin.ticket.ticket-category.index')}}" class="status-btn" onclick="filterByStatus(this, '')" style="text-decoration: none;"">
             <span class="btn-icon" style="font-size:22px;"> &#128451; </span>
             <span>همه دسته بندی ها</span>
             <span class="btn-count">  {{App\Models\Admin\Ticket\TicketCategory::allCategory()->count() }}  </span>
           </a>
 
-          <a href="{{route('admin.tickets.ticket-category.active')}}" class="status-btn"   data-filter="success" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
+          <a href="{{route('admin.ticket.ticket-category.active')}}" class="status-btn"   data-filter="success" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
             <span class="btn-icon">✓</span>
             <span>فعال</span>
             <span class="btn-count">{{App\Models\Admin\Ticket\TicketCategory::activeCategory()->count()}}</span>
           </a>
 
 
-          <a href="{{route('admin.tickets.ticket-category.inactive')}}" class="status-btn" data-filter="failed" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
+          <a href="{{route('admin.ticket.ticket-category.inactive')}}" class="status-btn" data-filter="failed" onclick="filterByStatus(this, '')"  style="text-decoration: none;">
             <span class="btn-icon">✗</span>
             <span>غیرفعال</span>
             <span class="btn-count"> {{App\Models\Admin\Ticket\TicketCategory::inactiveCategory()->count() }} </span>
@@ -64,8 +64,8 @@
                              <td>{{$category->create}}</td>
 
                             <td class="actions">
-                                <a href="{{route('admin.tickets.ticket-category.edit',$category)}}" class="btn-gold btn-gold-sm">&#x270F;</a>
-                                    <form action="{{ route('admin.tickets.ticket-category.destroy', $category) }}" method="post" class="delete-form">
+                                <a href="{{route('admin.ticket.ticket-category.edit',$category)}}" class="btn-gold btn-gold-sm">&#x270F;</a>
+                                    <form action="{{ route('admin.ticket.ticket-category.destroy', $category) }}" method="post" class="delete-form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-gold btn-gold-sm btn-gold-danger delete-btn"

@@ -114,13 +114,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 
         //ticket routes
-        Route::prefix('tickets')->name('tickets.')->group(function () {
+        Route::prefix('ticket')->name('ticket.')->group(function () {
 
                 Route::resource('ticket-category', TicketCategoryController::class);
                 Route::get('ticket-category-active',[TicketCategoryController::class,'activeStatus'])->name('ticket-category.active');
                 Route::get('ticket-category-inactive',[TicketCategoryController::class,'inactiveStatus'])->name('ticket-category.inactive');
 
-                Route::resource('ticket-category', TicketPriorityController::class);
+                Route::resource('ticket-priority', TicketPriorityController::class);
                 Route::get('ticket-priority-active',[TicketPriorityController::class,'activeStatus'])->name('ticket-priority.active');
                 Route::get('ticket-priority-inactive',[TicketPriorityController::class,'inactiveStatus'])->name('ticket-priority.inactive');
 
