@@ -30,6 +30,11 @@ class AdminController extends Controller{
         }
 
 
+    public function edit(User $admin){
+        return view('admin.user.admin.edit', compact('admin'));
+    }
+
+
          public function update(AdminRequest $request, User $admin){
                 $inputs = $request->all();
                 $admin->update($inputs);
