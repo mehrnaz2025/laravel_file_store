@@ -6,8 +6,8 @@
             <section>
         <div class="glass">
             <div class="section-header">
-                <h3>ادمین ها </h3>
-                <a   href="{{route('admin.user.admin-user.create')}}"  class="btn-gold">➕ افزودن کاربر</a>
+                <h3> کاربران </h3>
+                <a   href="{{route('admin.user.client.create')}}"  class="btn-gold">➕ افزودن کاربر</a>
             </div>
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="جستجو در  کاربران..."

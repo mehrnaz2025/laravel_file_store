@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
-@section('title','ایجاد ادمین جدید ')
+@section('title','ایجاد کاربر جدید ')
 
 
 @section('content')
 
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="">&#129489;&#8205;&#9878; افزودن ادمین جدید</h5>
+                <h5 class="">  &#x1F464;  افزودن کاربر جدید</h5>
             </div>
-            <form action="{{route('admin.user.admin-user.store')}}" method="post"  enctype="multipart/form-data">
+            <form action="{{route('admin.user.client.store')}}" method="post"  enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                         <div class="row">
@@ -72,7 +72,7 @@
                         </div>
                 </div>
                 <div class="modal-footer">
-                     <a href="{{ route('admin.user.admin-user.index') }}"  class="btn-gold btn-gold-danger mx-2">برگشت</a>
+                     <a href="{{ route('admin.user.client.index') }}"  class="btn-gold btn-gold-danger mx-2">برگشت</a>
                     <button type="submit" class="btn-gold btn-gold-success">&#x1F4BE; ذخیره</button>
                 </div>
             </form>

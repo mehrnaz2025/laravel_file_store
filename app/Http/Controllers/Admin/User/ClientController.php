@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\AdminRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 class ClientController extends Controller{
 
         public function index() {
-            $clients=User::query()->where('is_admin',0)->latest()->paginate(10);
+            $clients=User::query()->where('is_admin',0)->latest()->paginate(5);
             return view('admin.user.client.index', compact('clients'));
        }
 
@@ -21,7 +22,8 @@ class ClientController extends Controller{
 
 
 
-        public function store(Request $request) {
+        public function store(AdminRequest $request) {
+            dd('gg');
                 $inputs = $request->all();
                 $inputs['password'] = Hash::make($request->password);
                 $inputs['is_admin'] = 0;
@@ -38,7 +40,7 @@ class ClientController extends Controller{
     }
 
 
-         public function update(Request $request, User $client){
+         public function update(AdminRequest $request, User $client){
                 $inputs = $request->all();
                 $client->update($inputs);
                 return to_route('admin.user.client.index')->with('success', 'کاربر  با موفقیت ویرایش شد');
