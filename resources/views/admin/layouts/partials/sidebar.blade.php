@@ -99,7 +99,7 @@
 
         <div class="menu-item">
             <span class="icon" style="font-size:18px;"> &#x1F464; </span>
-            <a href="#" style="text-decoration: none ; color:antiquewhite">کاربران</a>
+            <a  href="{{ route('admin.user.client.index') }}" style="text-decoration: none ; color:antiquewhite">کاربران</a>
         </div>
 
         <div class="menu-item">
