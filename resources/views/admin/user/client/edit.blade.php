@@ -1,12 +1,12 @@
 @extends('admin.layouts.master')
-@section('title','ویرایش ادمین  ')
+@section('title','ویرایش کاربر  ')
 
 
 @section('content')
 
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="">&#129489;&#8205;&#9878; ویرایش ادمین </h5>
+                <h5 class="">&#129489;&#8205;&#9878; ویرایش کاربر </h5>
             </div>
             <form action="{{route('admin.user.client.update',$client)}}" method="post"  enctype="multipart/form-data">
                 @csrf
