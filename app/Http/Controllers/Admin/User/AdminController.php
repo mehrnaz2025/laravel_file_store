@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\AdminRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -22,17 +23,24 @@ class AdminController extends Controller{
 
 
 
-        public function store(Request $request) {
-            $inputs = $request->all();
-            $inputs['password'] = Hash::make($request->password);
-            $inputs['is_admin'] = 1;
-             User::create($inputs);
-            return redirect()->route('admin.user.admin-user.index')->with('success', 'ادمین جدید با موفقیت ثبت شد');
+        public function store(AdminRequest $request) {
+                $inputs = $request->all();
+                $inputs['password'] = Hash::make($request->password);
+                $inputs['is_admin'] = 1;
+                User::create($inputs);
+                return to_route('admin.user.admin-user.index')->with('success', 'ادمین جدید با موفقیت ثبت شد');
         }
 
 
+         public function update(AdminRequest $request, User $admin){
+                $inputs = $request->all();
+                $admin->update($inputs);
+                return to_route('admin.user.admin-user.index')->with('success', 'ادمین  با موفقیت ویرایش شد');
+         }
 
-        
+
+
+
 
 
 }
