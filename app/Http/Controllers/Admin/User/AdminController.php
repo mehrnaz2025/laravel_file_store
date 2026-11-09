@@ -22,7 +22,6 @@ class AdminController extends Controller{
 
 
 
-
         public function store(AdminRequest $request) {
                 $inputs = $request->all();
                 $inputs['password'] = Hash::make($request->password);
@@ -37,6 +36,13 @@ class AdminController extends Controller{
                 $admin->update($inputs);
                 return to_route('admin.user.admin-user.index')->with('success', 'ادمین  با موفقیت ویرایش شد');
          }
+
+
+        public function destroy(User $admin){
+            $admin->forceDelete();
+            return to_route('admin.user.admin-user.index')->with('success', 'ادمین با موفقیت حذف شد');
+        }
+
 
 
 
