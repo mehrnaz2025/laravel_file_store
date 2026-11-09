@@ -26,7 +26,7 @@ class AdminRequest extends FormRequest
             }
             else{
                 return [
-
+                        'name' => 'required|max:120|min:1|regex:/^[ا-یa-zA-Zء-ي ]+$/u',
                 ];
             }
 

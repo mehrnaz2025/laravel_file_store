@@ -13,18 +13,15 @@ use Illuminate\Notifications\Notifiable;
 use Morilog\Jalali\CalendarUtils;
 use Morilog\Jalali\Jalalian;
 use Spatie\Permission\Traits\HasRoles;
-#[Fillable(['name', 'email', 'password'])]
-#[Hidden(['password', 'remember_token'])]
+
+// #[Fillable(['name', 'email', 'password','is_admin'])]
+// #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
-    /** @use HasFactory<UserFactory> */
+
     use HasFactory, Notifiable,HasRoles;
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+    protected $guarded = ['id'];
     protected function casts(): array
     {
         return [
