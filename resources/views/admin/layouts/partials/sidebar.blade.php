@@ -114,17 +114,17 @@
             <span class="icon" style="font-size:20px;">&#127917; </span>
             <a href="{{ route('admin.user.role.index') }}" style="text-decoration: none ; color:antiquewhite">نقش ها</a>
         </div>
-
+{{--
         <div class="menu-item">
             <span class="icon" style="font-size:20px;">&#x1F4B0; </span>
             <a href="{{ route('admin.user.wallet.index') }}" style="text-decoration: none ; color:antiquewhite"> کیف پول</a>
-        </div>
+        </div> --}}
 
 
-        <div class="menu-item">
+        {{-- <div class="menu-item">
             <span class="icon" style="font-size:20px;">&#x1F4C6; </span>
             <a href="{{ route('admin.user.wallet-transactions.index') }}"  style="text-decoration: none ; color:antiquewhite">  تاریخچه تراکنش ها </a>
-        </div>
+        </div> --}}
 
 
 

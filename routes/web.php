@@ -108,10 +108,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
                 Route::resource('admin-user',AdminController::class);
                 Route::resource('permission',PermissionController::class);
                 Route::resource('role',RoleController::class);
-                Route::resource('wallet',WalletController::class);
-                Route::post('/wallet/deposit', [WalletController::class, 'deposit']);
-                Route::post('/wallet/withdraw', [WalletController::class, 'withdraw']);
-                Route::resource('wallet-transactions', WalletTransactionController::class);
+                // Route::resource('wallet',WalletController::class);
+                // Route::post('/wallet/deposit', [WalletController::class, 'deposit']);
+                // Route::post('/wallet/withdraw', [WalletController::class, 'withdraw']);
+                // Route::resource('wallet-transactions', WalletTransactionController::class);
         });
 
 

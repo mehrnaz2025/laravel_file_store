@@ -33,14 +33,15 @@
                             <div class="permissions-grid">
                                 @forelse ($permissions as $key=>$permission )
                                     <label class="perm-item"><input type="checkbox"  name="permissions[]"  value="{{$permission->name}}"> {{$permission->name}} </label>
-                                @empty
+                                    @error('permissions.'.$key)
+                                        <span class="bg-danger text-white p-1 rounded">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                        @enderror
+                                    @empty
 
                                 @endforelse
-                                @error('permissions.'.$key)
-                                <span class="bg-danger text-white p-1 rounded">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
+
                             </div>
                         </div>
 
