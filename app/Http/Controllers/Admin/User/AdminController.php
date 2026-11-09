@@ -26,9 +26,13 @@ class AdminController extends Controller{
             $inputs = $request->all();
             $inputs['password'] = Hash::make($request->password);
             $inputs['is_admin'] = 1;
-            $user = User::create($inputs);
+             User::create($inputs);
             return redirect()->route('admin.user.admin-user.index')->with('success', 'ادمین جدید با موفقیت ثبت شد');
         }
+
+
+
+        
 
 
 }
