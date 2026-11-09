@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\Ticket\TicketCategoryController;
 use App\Http\Controllers\Admin\Ticket\TicketController;
 use App\Http\Controllers\Admin\Ticket\TicketPriorityController;
 use App\Http\Controllers\Admin\User\AdminController;
+use App\Http\Controllers\Admin\User\ClientController;
 use App\Http\Controllers\Admin\User\PermissionController;
 use App\Http\Controllers\Admin\User\RoleController;
 use App\Http\Controllers\Admin\User\WalletController;
@@ -105,6 +106,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 
         Route::prefix('user')->name('user.')->group(function(){
+
+                Route::resource('client',ClientController::class);
                 Route::resource('admin-user',AdminController::class);
                 Route::resource('permission',PermissionController::class);
                 Route::resource('role',RoleController::class);
