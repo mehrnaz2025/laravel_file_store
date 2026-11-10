@@ -2,13 +2,14 @@
 
 namespace App\Models\Admin\market;
 
+use App\Models\Admin\market\OrderItem;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model{
     use SoftDeletes;
-
+     protected $guarded = ['id'];
    public function user() {
         return $this->belongsTo(User::class);
     }
@@ -20,8 +21,7 @@ class Order extends Model{
 
 
 
-       public function getOrderStatusAttribute()
-    {
+       public function getOrderStatusAttribute(){
         switch ($this->status){
                  case 0:
                 $status = 'در انتظار ';
