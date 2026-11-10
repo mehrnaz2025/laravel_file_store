@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Market\CategoryController;
 use App\Http\Controllers\Admin\Market\CommentController;
 use App\Http\Controllers\Admin\Market\CoupanController;
 use App\Http\Controllers\Admin\Market\FileController;
+use App\Http\Controllers\Admin\Market\OrderController;
 use App\Http\Controllers\Admin\Market\ProductController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Admin\Ticket\TicketAdminController;
@@ -77,6 +78,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
                 Route::post('comment-answer/{comment}', [CommentController::class, 'answer'])->name('comment.answer');
                 Route::get('comment/all-approved',[CommentController::class,'allApproved'])->name('comment.all-approved');
                 Route::get('comment/all-unApproved',[CommentController::class,'allUnApproved'])->name('comment.all-unApproved');
+
+
+                //order routes
+                Route::prefix('order')->name('order.')->group(function(){
+                    Route::get('/',[OrderController::class,'index'])->name('index');
+                });
+
 
 
        });
