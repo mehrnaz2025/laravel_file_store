@@ -86,18 +86,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($tickets as $key=>$category)
+                        @forelse ($tickets as $key=>$ticket)
                             <tr>
                                 <th>{{ $tickets->firstItem() + $key }}</th>
                                 <td>{{ $ticket->subject }}</td>
+                                <td>{{ $ticket->user->name ?? 'کاربر ناشناس' }}</td>
                                 <td>{{ $ticket->category->name }}</td>
-                                <td>{{ $ticket->user->name ?? 'کاربر ناشناس'}}</td>
                                 <td>{{ $ticket->priority->name }}</td>
-                                <td>{{ $category->create }}</td>
+                                <td>
+                                    @if ($ticket->status == 0)
+                                        <span class="badge-gold bg-warning-g">باز</span>
+                                    @else
+                                        <span class="badge-gold bg-info-g">پاسخ</span>
+                                    @endif
+                                </td>
+
+                                <td>{{ $ticket->create }}</td>
+
                                 <td class="actions">
-                                <td class="actions">
-                                    <a href="{{ route('admin.ticket.ticket.show', $ticket) }}"  class="btn-gold btn-gold-sm btn-gold-info" title="پاسخ ها"
-                                        style="font-size:17px;color:white;"> &#x1F4AD; </a>
+                                    <a href="{{ route('admin.ticket.ticket.show', $ticket) }}"
+                                        class="btn-gold btn-gold-sm btn-gold-info" title="پاسخ ها"
+                                        style="font-size:13px;color:white;">💬 پاسخ‌ها </a>
+
                                 </td>
 
                             </tr>
@@ -126,79 +136,3 @@
 
 
 @endsection
-
-
-
-
-
-
-
-
-<section class="page active" id="page-tickets">
-    <div class="glass">
-
-
-
-        <div style="overflow-x:auto">
-            <table id="tickets-table">
-                <thead>
-                    <tr>
-                        <th>عنوان</th>
-                        <th>کاربر</th>
-                        <th>اولویت</th>
-                        <th>وضعیت</th>
-                        <th>تاریخ</th>
-                        <th>عملیات</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- <tr data-priority="بالا" data-status="باز"> -->
-                    <tr data-priority="high" data-status="open">
-                        <td>مشکل دانلود</td>
-                        <td>علی رضایی</td>
-                        <td>
-                            <span class="badge-gold bg-danger-g">بالا</span>
-                        </td>
-                        <td>
-                            <span class="badge-gold bg-warning-g">باز</span>
-                        </td>
-                        <td>1403/08/10</td>
-                        <td class="actions">
-                            <button class="btn-gold btn-gold-sm btn-gold-info" onclick="showTicketDetail(1)">💬
-                                پاسخ‌ها</button>
-                            <button class="btn-gold btn-gold-sm btn-gold-danger"
-                                onclick="confirmDelete()">🗑️</button>
-                        </td>
-                    </tr>
-                    <tr data-priority="low" data-status="answered">
-                        <!-- <tr data-priority="کم" data-status="پاسخ"> -->
-                        <td>سوال قالب</td>
-                        <td>مریم احمدی</td>
-                        <td><span class="badge-gold bg-info-g">کم</span></td>
-                        <td><span class="badge-gold bg-info-g">پاسخ</span></td>
-                        <td>1403/08/12</td>
-                        <td class="actions">
-                            <button class="btn-gold btn-gold-sm btn-gold-info" onclick="showTicketDetail(2)">💬
-                                پاسخ‌ها</button>
-                            <button class="btn-gold btn-gold-sm btn-gold-danger"
-                                onclick="confirmDelete()">🗑️</button>
-                        </td>
-                    </tr>
-                    <tr data-priority="متوسط" data-status="باز">
-                        <td>درخواست فاکتور</td>
-                        <td>رضا کریمی</td>
-                        <td><span class="badge-gold bg-warning-g">متوسط</span></td>
-                        <td><span class="badge-gold bg-warning-g">باز</span></td>
-                        <td>1403/08/15</td>
-                        <td class="actions">
-                            <button class="btn-gold btn-gold-sm btn-gold-info" onclick="showTicketDetail(3)">💬
-                                پاسخ‌ها</button>
-                            <button class="btn-gold btn-gold-sm btn-gold-danger"
-                                onclick="confirmDelete()">🗑️</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>

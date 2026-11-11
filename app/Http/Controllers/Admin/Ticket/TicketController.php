@@ -10,7 +10,7 @@ class TicketController extends Controller{
 
 
         public function index(){
-                $tickets = Ticket::whereNull('ticket_id')->get();
+                $tickets = Ticket::query()->whereNull('ticket_id')->latest()->paginate(5);
                 return view('admin.ticket.index', compact('tickets'));
         }
 

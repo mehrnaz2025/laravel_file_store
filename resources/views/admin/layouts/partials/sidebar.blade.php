@@ -37,7 +37,6 @@
 
         <div class="menu-item">
             <span class="icon d-flex" style="font-size: 16px;">
-
                 <span class="">&#128722;</span>
             </span>
             <a href="{{ route('admin.market.order.index') }}"
