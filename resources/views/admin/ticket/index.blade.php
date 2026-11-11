@@ -80,6 +80,7 @@
                             <th>نویسنده تیکت</th>
                             <th>دسته</th>
                             <th>اولویت</th>
+                            <th>پاسخ دهنده</th>
                             <th>وضعیت</th>
                             <th>تاریخ</th>
                             <th>عملیات</th>
@@ -93,6 +94,7 @@
                                 <td>{{ $ticket->user->name ?? 'کاربر ناشناس' }}</td>
                                 <td>{{ $ticket->category->name }}</td>
                                 <td>{{ $ticket->priority->name }}</td>
+                                <td>{{ $ticket->admin->user->name ?? 'ادمین تیکت' }}</td>
                                 <td>
                                     @if ($ticket->status == 0)
                                         <span class="badge-gold bg-warning-g">باز</span>
@@ -107,6 +109,15 @@
                                     <a href="{{ route('admin.ticket.ticket.show', $ticket) }}"
                                         class="btn-gold btn-gold-sm btn-gold-info" title="پاسخ ها"
                                         style="font-size:13px;color:white;">💬 پاسخ‌ها </a>
+
+                                    @if ($ticket->status == 1)
+                                        <a class="btn  btn-sm badge badge-danger rounded rounded-circle p-2"
+                                            href="{{ route('admin.ticket.ticket.change-status', $ticket->id) }}"> بستن </a>
+                                    @else
+                                        <a class="btn btn-sm badge badge-info rounded rounded-circle p-2"
+                                            href="{{ route('admin.ticket.ticket.change-status', $ticket->id) }}"> باز کردن
+                                        </a>
+                                    @endif
 
                                 </td>
 
