@@ -12,6 +12,13 @@ class TicketController extends Controller{
         public function index(){
                 $tickets = Ticket::whereNull('ticket_id')->get();
                 return view('admin.ticket.index', compact('tickets'));
-
         }
+
+
+        public function show(Ticket $ticket) {
+             return view('admin.ticket.show', compact('ticket'));
+        }
+
+
+
 }
