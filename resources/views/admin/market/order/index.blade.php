@@ -44,11 +44,12 @@
                         <tr>
                             <th>#</th>
                             <th>کاربر</th>
+                            <th>ایمیل</th>
                             <th>مبلغ کل</th>
                             <th>تخفیف</th>
                             <th>مبلغ نهایی</th>
                             <th>وضعیت</th>
-                            <td>کد پیگیری</td>
+                            <th>کد پیگیری</th>
                             <th>تاریخ</th>
                             <th>عملیات</th>
                         </tr>
@@ -61,9 +62,11 @@
                                 <td>{{ $order->user->email ?? '-' }}</td>
                                 <td>{{ number_format($order->total_amount) }} تومان</td>
                                 <td>{{ number_format($order->discount_amount) }} تومان</td>
-                                <td">{{ number_format($order->final_amount) }} تومان</td>
-                                <td>{{ $order->tracking_code }}</td>
+                                <td>{{ number_format($order->final_amount) }} تومان</td>
+                                <td>{{ $order->orderStatus }}</td>
+                                <td>{{ $order->tracking_code ?? '-' }}</td>
                                 <td>{{ $order->create }}</td>
+                                <td>عملیات</td>
                             </tr>
                         @empty
                             <tr>

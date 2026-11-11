@@ -16,7 +16,7 @@
         <!--  بخش فروشگاه  -->
         <div class="sidebar-group-title">
             <span class="group-icon">📦</span>
-            <span class="group-text">بخش فروشگاه</span>
+            <span class="group-text">بخش مارکت</span>
         </div>
 
         <div class="menu-item">
@@ -33,6 +33,17 @@
             <a href="{{ route('admin.market.product.index') }}"
                 style="text-decoration: none ; color:antiquewhite;width:100%"> محصول </a>
         </div>
+
+
+        <div class="menu-item">
+            <span class="icon d-flex" style="font-size: 16px;">
+
+                <span class="">&#128722;</span>
+            </span>
+            <a href="{{ route('admin.market.order.index') }}"
+                style="text-decoration: none ; color:antiquewhite;width:100%"> سفارشات </a>
+        </div>
+
 
 
 

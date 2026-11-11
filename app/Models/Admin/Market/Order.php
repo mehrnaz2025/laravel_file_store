@@ -6,12 +6,22 @@ use App\Models\Admin\market\OrderItem;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Morilog\Jalali\CalendarUtils;
+use Morilog\Jalali\Jalalian;
 class Order extends Model{
-    use SoftDeletes;
+     use SoftDeletes;
      protected $guarded = ['id'];
-   public function user() {
+
+
+     public function user() {
         return $this->belongsTo(User::class);
+    }
+
+
+    //accessor
+    public function getCreateAttribute(){
+        $persian=Jalalian::forge($this->created_at)->format('Y/m/d');
+        return CalendarUtils::convertNumbers($persian);
     }
 
 
