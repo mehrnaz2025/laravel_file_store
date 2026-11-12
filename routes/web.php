@@ -133,18 +133,27 @@ Route::prefix('admin')->name('admin.')->group(function(){
                 Route::get('ticket-category-active',[TicketCategoryController::class,'activeStatus'])->name('ticket-category.active');
                 Route::get('ticket-category-inactive',[TicketCategoryController::class,'inactiveStatus'])->name('ticket-category.inactive');
 
+                //ticket priorities routes
                 Route::resource('ticket-priority', TicketPriorityController::class);
                 Route::get('ticket-priority-active',[TicketPriorityController::class,'activeStatus'])->name('ticket-priority.active');
                 Route::get('ticket-priority-inactive',[TicketPriorityController::class,'inactiveStatus'])->name('ticket-priority.inactive');
 
 
+                //ticket admin routes
                 Route::resource('ticket-admin', TicketAdminController::class);
                 Route::get('ticket-admin/change-type-user/{admin}', [TicketAdminController::class,'changeUserType'])->name('ticket-admin.change-type-user');
+
+                //ticket routes
 
                  Route::get('/', [TicketController::class,'index'])->name('index');
                  Route::get('/{ticket}/show-ticket', [TicketController::class,'show'])->name('show');
                  Route::post('/reply/{ticket}',[TicketController::class,'reply'])->name('reply');
                  Route::get('/change-status/{ticket}',[TicketController::class,'changeStatus'])->name('change-status');
+
+                  Route::get('priority/low', [TicketController::class,'lowPriority'])->name('ticket-priority.low');
+                  Route::get('priority/medium', [TicketController::class,'mediumPriority'])->name('ticket-priority.medium');
+                  Route::get('priority/high', [TicketController::class,'highPriority'])->name('ticket-priority.high');
+                  Route::get('priority/urgent', [TicketController::class,'urgentPriority'])->name('ticket-priority.urgent');
 
 
 

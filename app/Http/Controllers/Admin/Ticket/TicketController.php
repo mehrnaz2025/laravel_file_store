@@ -48,6 +48,29 @@ class TicketController extends Controller
     }
 
 
+    public function lowPriority(){
+             $tickets = Ticket::query()->lowPriority()->paginate(5);
+             return view('admin.ticket.index', compact('tickets'));
+    }
+
+
+    public function mediumPriority(){
+             $tickets = Ticket::query()->mediumPriority()->paginate(5);
+             return view('admin.ticket.index', compact('tickets'));
+    }
+
+
+    public function highPriority(){
+              $tickets = Ticket::query()->highPriority()->paginate(5);
+             return view('admin.ticket.index', compact('tickets'));
+    }
+
+
+    public function urgentPriority(){
+              $tickets = Ticket::query()->urgentPriority()->paginate(5);
+             return view('admin.ticket.index', compact('tickets'));
+    }
+
 
 
 }

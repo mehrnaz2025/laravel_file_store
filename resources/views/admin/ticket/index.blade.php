@@ -14,32 +14,47 @@
                     onkeyup="searchTable('categories-table', this.value)">
             </div>
 
+
+
             <!-- ردیف اول: فیلتر اولویت -->
             <div class="status-filter-buttons">
-                <button type="button" class="status-btn active" data-filter="all" data-group="priority"
+                <a  href="{{route('admin.ticket.index')}}" class="status-btn active" style="text-decoration: none;
                     onclick="filterTickets(this)">
                     <span class="btn-icon" style="font-size:22px;">📋</span>
                     <span>همه اولویت‌ها</span>
-                    <span class="btn-count"> ------ </span>
-                </button>
-                <button type="button" class="status-btn" data-filter="high" data-group="priority"
+                    <span class="btn-count">   {{\App\Models\Admin\Ticket\Ticket::allTicket()->count() }}  </span>
+                </a>
+
+                <a href="{{route('admin.ticket.ticket-priority.urgent') }}" class="status-btn"  style="text-decoration: none;
                     onclick="filterTickets(this)">
-                    <span class="btn-icon" style="font-size:22px;">🔴</span>
-                    <span>بالا</span>
-                    <span class="btn-count">---------</span>
-                </button>
-                <button type="button" class="status-btn" data-filter="medium" data-group="priority"
+                    <span class="btn-icon" style="font-size:22px;">&#128681;</span>
+                    <span>فوری</span>
+                    <span class="btn-count">  {{\App\Models\Admin\Ticket\Ticket::urgentPriority()->count() }}  </span>
+                </a>
+
+                <a href="{{route('admin.ticket.ticket-priority.high') }}" class="status-btn" style="text-decoration: none;
                     onclick="filterTickets(this)">
-                    <span class="btn-icon" style="font-size:22px;">🟡</span>
+                    <span class="btn-icon" style="font-size:22px;">&#128308</span>
+                    <span>زیاد</span>
+                    <span class="btn-count">  {{App\Models\Admin\Ticket\Ticket::highPriority()->count() }}  </span>
+                </a>
+
+                <a href="{{route('admin.ticket.ticket-priority.medium') }}" class="status-btn" style="text-decoration: none;
+                    onclick="filterTickets(this)">
+                    <span class="btn-icon" style="font-size:22px;">&#128993;</span>
                     <span>متوسط</span>
-                    <span class="btn-count">-------</span>
-                </button>
-                <button type="button" class="status-btn" data-filter="low" data-group="priority"
+                    <span class="btn-count">   {{App\Models\Admin\Ticket\Ticket::mediumPriority()->count() }}   </span>
+                </a>
+
+                <a href="{{route('admin.ticket.ticket-priority.low') }}" class="status-btn" style="text-decoration: none;
                     onclick="filterTickets(this)">
-                    <span class="btn-icon" style="font-size:22px;">🔵</span>
+                    <span class="btn-icon" style="font-size:22px;">&#128994;</span>
                     <span>کم</span>
-                    <span class="btn-count">--------</span>
-                </button>
+                    <span class="btn-count">  {{App\Models\Admin\Ticket\Ticket::lowPriority()->count() }} </span>
+                </a>
+
+
+
             </div>
 
             <!-- ردیف دوم: فیلتر وضعیت -->
@@ -62,12 +77,16 @@
                     <span>پاسخ داده شده</span>
                     <span class="btn-count">1</span>
                 </button>
+
                 <button type="button" class="status-btn" data-filter="closed" data-group="status"
                     onclick="filterTickets(this)">
                     <span class="btn-icon">✓</span>
                     <span>بسته</span>
                     <span class="btn-count">0</span>
                 </button>
+
+
+
             </div>
 
 

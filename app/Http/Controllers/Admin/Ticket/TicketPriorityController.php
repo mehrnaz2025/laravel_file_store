@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin\Ticket;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Ticket\TicketPriorityRequest;
+use App\Models\Admin\Ticket\TicketFile;
 use App\Models\Admin\Ticket\TicketPriority;
 use Illuminate\Http\Request;
 
@@ -19,7 +21,7 @@ class TicketPriorityController extends Controller{
         }
 
 
-        public function store(Request $request){
+        public function store(TicketPriorityRequest $request){
              $inputs = $request->all();
              TicketPriority::query()->create($inputs);
              return to_route('admin.ticket.ticket-priority.index')->with('success', 'اولویت تیکت با موفقیت ایجاد شد');
@@ -31,7 +33,7 @@ class TicketPriorityController extends Controller{
         }
 
 
-        public function update(Request $request, TicketPriority $ticketPriority){
+        public function update(TicketPriorityRequest $request, TicketPriority $ticketPriority){
               $inputs = $request->all();
               $ticketPriority->update($inputs);
               return to_route('admin.ticket.ticket-priority.index')->with('success', ' اولویت تیکت با موفقیت ویرایش شد');
