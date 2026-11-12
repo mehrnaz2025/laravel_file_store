@@ -5,7 +5,7 @@
     <section>
         <div class="glass">
             <div class="detail-header">
-                <a href="{{ route('admin.ticket.ticket.index') }}" class="back-btn text-decoraion-none"
+                <a href="{{ route('admin.ticket.index') }}" class="back-btn text-decoraion-none"
                     style="text-decoration: none !important;">→ بازگشت به لیست تیکت ها</a>
                 <h3 id="commentDetailTitle" style="color:var(--gold-light);font-size:1rem !important;">💬 تیکت
                     {{ $ticket->user->name ?? 'کاربر ناشناس' }}</h3>

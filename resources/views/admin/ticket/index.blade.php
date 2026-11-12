@@ -106,7 +106,7 @@
                                 <td>{{ $ticket->create }}</td>
 
                                 <td class="actions">
-                                    <a href="{{ route('admin.ticket.ticket.show', $ticket) }}"
+                                    <a href="{{ route('admin.ticket.show', $ticket) }}"
                                         class="btn-gold btn-gold-sm btn-gold-info badge badge-info rounded rounded-circle py-3" title="پاسخ ها"
                                         style="font-size:11px;color:white;">💬 پاسخ‌ها </a>
 

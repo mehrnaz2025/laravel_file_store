@@ -162,7 +162,7 @@
 
        <div class="menu-item">
             <span class="icon" style="font-size:22px;"> &#x1F3AB; </span>
-            <a href="{{ route('admin.ticket.ticket.index') }}" style="text-decoration: none ;color:antiquewhite">    تیکت ها</a>
+            <a href="{{ route('admin.ticket.index') }}" style="text-decoration: none ;color:antiquewhite">    تیکت ها</a>
         </div>
 
 

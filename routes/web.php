@@ -141,9 +141,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
                 Route::resource('ticket-admin', TicketAdminController::class);
                 Route::get('ticket-admin/change-type-user/{admin}', [TicketAdminController::class,'changeUserType'])->name('ticket-admin.change-type-user');
 
-                Route::resource('ticket', TicketController::class);
+                 Route::get('/', [TicketController::class,'index'])->name('index');
+                 Route::get('/{ticket}/show-ticket', [TicketController::class,'show'])->name('show');
                  Route::post('/reply/{ticket}',[TicketController::class,'reply'])->name('reply');
                  Route::get('/change-status/{ticket}',[TicketController::class,'changeStatus'])->name('change-status');
+
+
 
         });
 

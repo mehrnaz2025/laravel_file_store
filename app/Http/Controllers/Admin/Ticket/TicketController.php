@@ -18,8 +18,8 @@ class TicketController extends Controller
     }
 
 
-    public function show(Ticket $ticket)
-    {
+    public function show(Ticket $ticket) {
+
         return view('admin.ticket.show', compact('ticket'));
     }
 
@@ -48,7 +48,6 @@ class TicketController extends Controller
     }
 
 
-    public function create() {}
 
-    public function store(Request $request) {}
+
 }
