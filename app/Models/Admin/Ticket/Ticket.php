@@ -38,16 +38,16 @@ class Ticket extends Model{
         return $this->belongsTo($this, 'ticket_id');
     }
 
-    public function children() {
+    public function answers() {
         return $this->hasMany($this, 'ticket_id');
     }
 
 
 
-        //accessor
-        public function getCreateAttribute(){
-            $persian=Jalalian::forge($this->created_at)->format('Y/m/d');
-            return CalendarUtils::convertNumbers($persian);
-        }
+    //accessor
+    public function getCreateAttribute(){
+        $persian=Jalalian::forge($this->created_at)->format('Y/m/d H:i');
+        return CalendarUtils::convertNumbers($persian);
+    }
 
 }

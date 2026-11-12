@@ -107,15 +107,15 @@
 
                                 <td class="actions">
                                     <a href="{{ route('admin.ticket.ticket.show', $ticket) }}"
-                                        class="btn-gold btn-gold-sm btn-gold-info" title="پاسخ ها"
-                                        style="font-size:13px;color:white;">💬 پاسخ‌ها </a>
+                                        class="btn-gold btn-gold-sm btn-gold-info badge badge-info rounded rounded-circle py-3" title="پاسخ ها"
+                                        style="font-size:11px;color:white;">💬 پاسخ‌ها </a>
 
                                     @if ($ticket->status == 1)
-                                        <a class="btn  btn-sm badge badge-danger rounded rounded-circle p-2"
-                                            href="{{ route('admin.ticket.ticket.change-status', $ticket->id) }}"> بستن </a>
+                                        <a class="btn-gold-warning btn-gold badge badge-danger rounded rounded-circle p-2"
+                                            href="{{ route('admin.ticket.change-status', $ticket->id) }}"> باز کردن </a>
                                     @else
-                                        <a class="btn btn-sm badge badge-info rounded rounded-circle p-2"
-                                            href="{{ route('admin.ticket.ticket.change-status', $ticket->id) }}"> باز کردن
+                                        <a class="btn-gold-success btn-gold badge badge-info rounded rounded-circle p-2"
+                                            href="{{ route('admin.ticket.change-status', $ticket->id) }}"> بستن
                                         </a>
                                     @endif
 
