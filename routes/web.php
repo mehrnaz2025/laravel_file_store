@@ -155,8 +155,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
                   Route::get('priority/high', [TicketController::class,'highPriority'])->name('ticket-priority.high');
                   Route::get('priority/urgent', [TicketController::class,'urgentPriority'])->name('ticket-priority.urgent');
 
-
-
         });
 
 
