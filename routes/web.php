@@ -43,7 +43,7 @@ require __DIR__.'/auth.php';
 
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/app', [HomeController::class, 'index'])->name('home');
 
 
 Route::prefix('admin')->name('admin.')->group(function(){
