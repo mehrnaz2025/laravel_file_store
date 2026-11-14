@@ -16,7 +16,7 @@ return new class extends Migration{
             $table->string('author')->nullable();
             $table->string('speaker')->nullable();
             $table->unsignedBigInteger('price')->default(0);
-            $table->unsignedInteger('view')->default(0);
+           
             $table->tinyInteger('status')->default(0);
             $table->tinyInteger('marketable')->default(0);
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
