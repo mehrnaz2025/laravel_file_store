@@ -56,6 +56,10 @@ class Product extends Model{
                return $this->hasMany(File::class,'product_id');
         }
 
+       public function views(){
+            return $this->hasMany(ProductView::class, 'product_id');
+        }
+
 
 
         //accessor
