@@ -13,7 +13,7 @@ return new class extends Migration{
             $table->string('slug')->nullable()->unique();
             $table->text('description')->nullable();
             $table->text('image')->nullable();
-            $table->string('auther')->nullable();
+            $table->string('author')->nullable();
             $table->string('speaker')->nullable();
             $table->unsignedBigInteger('price')->default(0);
             $table->unsignedInteger('view')->default(0);

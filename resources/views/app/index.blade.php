@@ -1053,7 +1053,7 @@
             </div>
 
             <!-- گرید محصولات تخفیف‌دار -->
-            <div class="offers-grid">
+            {{-- <div class="offers-grid">
 
                 <!-- محصول ۱ -->
                 <div class="offer-card">
@@ -1175,12 +1175,12 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
 
             <!-- دکمه مشاهده همه -->
-            <div class="offers-more">
+            {{-- <div class="offers-more">
                 <a href="products.html" class="offers-more-btn">مشاهده همه تخفیف‌ها ←</a>
-            </div>
+            </div> --}}
 
         </div>
     </section>

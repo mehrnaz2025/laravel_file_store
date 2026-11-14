@@ -34,8 +34,8 @@
 
                             <div class="mb-3 col-12 col-lg-3">
                                 <label class="form-label"> نویسنده</label>
-                                <input type="text" class="form-control" name="auther" value="{{ old('auther',$product->auther) }}">
-                                @error('auther')
+                                <input type="text" class="form-control" name="author" value="{{ old('auther',$product->author) }}">
+                                @error('author')
                                     <div class="p-1 my-1 text-danger rounded "><strong>{{ $message }}</strong></div>
                                 @enderror
                             </div>

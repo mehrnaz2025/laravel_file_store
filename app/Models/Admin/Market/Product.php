@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin\Market;
 
+use App\Models\Admin\market\OrderItem;
 use App\Models\User;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Dyrynda\Database\Support\CascadeSoftDeletes;
@@ -33,7 +34,7 @@ class Product extends Model{
         public function comments(){
             return $this->morphMany(Comment::class, 'commentable');
         }
-        
+
         public function category(){
             return $this->belongsTo(Category::class,'category_id','id');
         }
@@ -41,6 +42,20 @@ class Product extends Model{
          public function user() {
              return $this->belongsTo(User::class,'user_id');
          }
+
+
+
+
+        public function orderItems(){
+               return $this->hasMany(OrderItem::class,'product_id');
+        }
+
+
+
+        public function files(){
+               return $this->hasMany(File::class,'product_id');
+        }
+
 
 
         //accessor

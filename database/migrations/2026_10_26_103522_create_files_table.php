@@ -17,6 +17,7 @@ return new class extends Migration{
             $table->string('mime_type');
             $table->unsignedBigInteger('size');
             $table->string('extension');
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
             $table->tinyInteger('type')->default(0) ->comment("0=>audio/mpeg, 1=>audio/wav, 2=>application/zip , 3=>application/x-rar-compressed,
                                                                4=>application/x-7z-compressed,5=>'application/x-tar, 6=>application/pdf, 7=>text/plain,
                                                                 8=>application/octet-stream");
