@@ -2,9 +2,7 @@
 
 
 @section('content')
-
-
-      <!-- 4. Hero Banner -->
+    <!-- 4. Hero Banner -->
     <section class="hero-banner">
         <div class="container">
             <div class="banner-box">
@@ -37,6 +35,426 @@
 
 
 
+    <!-- ========================================   اسلایدر جدیدترین فایل‌های صوتی ======================================== -->
+    <section class="audio-slider-section">
+        <div class="container">
+
+            <!-- هدر بخش -->
+            <div class="section-header">
+                <h2>🎵 جدیدترین فایل‌های صوتی</h2>
+                <a href="products.html?cat=audio">مشاهده همه ←</a>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="swiper audioSwiper">
+                <div class="swiper-wrapper">
+
+                    <!-- کارت ۱ -->
+                    <div class="swiper-slide">
+                        <div class="audio-card">
+                            <div class="audio-image">
+                                <span class="audio-badge">🔥 پرفروش</span>
+                                <span class="audio-rank">#۱</span>
+                                <img src="https://via.placeholder.com/300x300/1e3a8a/ffffff?text=Podcast+1"
+                                    alt="پادکست">
+                                <button class="play-btn" title="پیش‌نمایش">
+                                    ▶
+                                </button>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-category">🎙️ پادکست</div>
+                                <h3 class="audio-title">پادکست مدیریت زمان و بهره‌وری</h3>
+                                <div class="audio-author">🎤 گوینده: علی محمدی</div>
+                                <div class="audio-meta">
+                                    <span class="audio-rating">⭐ ۴.۹</span>
+                                    <span class="audio-duration">⏱️ ۲ ساعت</span>
+                                </div>
+                                <div class="audio-price-box">
+                                    <span class="audio-price">۴۵,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۲ -->
+                    <div class="swiper-slide">
+                        <div class="audio-card">
+                            <div class="audio-image">
+                                <span class="audio-badge">🔥 پرفروش</span>
+                                <span class="audio-rank">#۲</span>
+                                <img src="https://via.placeholder.com/300x300/2563eb/ffffff?text=Audiobook"
+                                    alt="کتاب صوتی">
+                                <button class="play-btn" title="پیش‌نمایش">▶</button>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-category">📖 کتاب صوتی</div>
+                                <h3 class="audio-title">کتاب صوتی عادت‌های اتمی</h3>
+                                <div class="audio-author">🎤 گوینده: رضا کریمی</div>
+                                <div class="audio-meta">
+                                    <span class="audio-rating">⭐ ۴.۸</span>
+                                    <span class="audio-duration">⏱️ ۵ ساعت</span>
+                                </div>
+                                <div class="audio-price-box">
+                                    <span class="audio-price">۸۵,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۳ -->
+                    <div class="swiper-slide">
+                        <div class="audio-card">
+                            <div class="audio-image">
+                                <span class="audio-badge">🔥 پرفروش</span>
+                                <span class="audio-rank">#۳</span>
+                                <img src="https://via.placeholder.com/300x300/e8998d/ffffff?text=Meditation"
+                                    alt="مراقبه">
+                                <button class="play-btn" title="پیش‌نمایش">▶</button>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-category">🧘 مراقبه و آرامش</div>
+                                <h3 class="audio-title">مجموعه مدیتیشن آرامش درون</h3>
+                                <div class="audio-author">🎤 گوینده: سارا احمدی</div>
+                                <div class="audio-meta">
+                                    <span class="audio-rating">⭐ ۴.۹</span>
+                                    <span class="audio-duration">⏱️ ۱.۵ ساعت</span>
+                                </div>
+                                <div class="audio-price-box">
+                                    <span class="audio-price">۳۵,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۴ -->
+                    <div class="swiper-slide">
+                        <div class="audio-card">
+                            <div class="audio-image">
+                                <span class="audio-badge">🔥 پرفروش</span>
+                                <span class="audio-rank">#۴</span>
+                                <img src="https://via.placeholder.com/300x300/3b82f6/ffffff?text=Music" alt="موسیقی">
+                                <button class="play-btn" title="پیش‌نمایش">▶</button>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-category">🎼 موسیقی</div>
+                                <h3 class="audio-title">مجموعه موسیقی کلاسیک پیانو</h3>
+                                <div class="audio-author">🎹 هنرمند: آرمان موسوی</div>
+                                <div class="audio-meta">
+                                    <span class="audio-rating">⭐ ۴.۷</span>
+                                    <span class="audio-duration">⏱️ ۳ ساعت</span>
+                                </div>
+                                <div class="audio-price-box">
+                                    <span class="audio-price">۶۰,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۵ -->
+                    <div class="swiper-slide">
+                        <div class="audio-card">
+                            <div class="audio-image">
+                                <span class="audio-badge">🔥 پرفروش</span>
+                                <span class="audio-rank">#۵</span>
+                                <img src="https://via.placeholder.com/300x300/60a5fa/ffffff?text=Tutorial" alt="آموزش">
+                                <button class="play-btn" title="پیش‌نمایش">▶</button>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-category">🎧 آموزش صوتی</div>
+                                <h3 class="audio-title">آموزش زبان انگلیسی با پادکست</h3>
+                                <div class="audio-author">🎤 مدرس: دکتر رضایی</div>
+                                <div class="audio-meta">
+                                    <span class="audio-rating">⭐ ۴.۸</span>
+                                    <span class="audio-duration">⏱️ ۱۰ ساعت</span>
+                                </div>
+                                <div class="audio-price-box">
+                                    <span class="audio-price">۱۲۰,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۶ -->
+                    <div class="swiper-slide">
+                        <div class="audio-card">
+                            <div class="audio-image">
+                                <span class="audio-badge">🔥 پرفروش</span>
+                                <span class="audio-rank">#۶</span>
+                                <img src="https://via.placeholder.com/300x300/1e3a8a/ffffff?text=Story" alt="داستان">
+                                <button class="play-btn" title="پیش‌نمایش">▶</button>
+                            </div>
+                            <div class="audio-info">
+                                <div class="audio-category">📖 داستان صوتی</div>
+                                <h3 class="audio-title">مجموعه داستان‌های کوتاه کلاسیک</h3>
+                                <div class="audio-author">🎤 گوینده: مریم حسینی</div>
+                                <div class="audio-meta">
+                                    <span class="audio-rating">⭐ ۴.۶</span>
+                                    <span class="audio-duration">⏱️ ۴ ساعت</span>
+                                </div>
+                                <div class="audio-price-box">
+                                    <span class="audio-price">۵۵,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========================================   اسلایدر جدیدترین کتاب های الکترونیکی ======================================== -->
+    <section class="ebook-slider-section">
+        <div class="container">
+            <!-- هدر بخش -->
+            <div class="section-header">
+                <h2>📚   جدیدترین کتاب های الکترونیکی</h2>
+                <a href="products.html?cat=pdf">مشاهده همه ←</a>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="swiper ebookSwiper">
+                <div class="swiper-wrapper">
+
+                    <!-- کارت ۱ -->
+                    <div class="swiper-slide">
+                        <div class="ebook-card">
+                            <div class="ebook-image">
+                                <span class="ebook-badge">🔥 پرفروش</span>
+                                <span class="ebook-rank">#۱</span>
+                                <span class="ebook-format">PDF</span>
+                                <img src="https://via.placeholder.com/300x380/1e3a8a/ffffff?text=Python+Book"
+                                    alt="کتاب پایتون">
+                                <button class="preview-btn" title="پیش‌نمایش">👁️</button>
+                            </div>
+                            <div class="ebook-info">
+                                <div class="ebook-category">📖 کتاب علمی</div>
+                                <h3 class="ebook-title">آموزش جامع برنامه‌نویسی پایتون</h3>
+                                <div class="ebook-author">✍️ نویسنده: دکتر رضایی</div>
+                                <div class="ebook-meta">
+                                    <span class="ebook-pages">📄 ۴۵۰ صفحه</span>
+                                    <span class="ebook-size">💾 ۲۵ مگابایت</span>
+                                </div>
+                                <div class="ebook-price-box">
+                                    <span class="ebook-price">۹۵,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۲ -->
+                    <div class="swiper-slide">
+                        <div class="ebook-card">
+                            <div class="ebook-image">
+                                <span class="ebook-badge">🔥 پرفروش</span>
+                                <span class="ebook-rank">#۲</span>
+                                <span class="ebook-format">EPUB</span>
+                                <img src="https://via.placeholder.com/300x380/2563eb/ffffff?text=AI+Book"
+                                    alt="کتاب هوش مصنوعی">
+                                <button class="preview-btn" title="پیش‌نمایش">👁️</button>
+                            </div>
+                            <div class="ebook-info">
+                                <div class="ebook-category">📖 کتاب علمی</div>
+                                <h3 class="ebook-title">هوش مصنوعی و یادگیری ماشین</h3>
+                                <div class="ebook-author">✍️ نویسنده: مهندس کریمی</div>
+                                <div class="ebook-meta">
+                                    <span class="ebook-pages">📄 ۳۲۰ صفحه</span>
+                                    <span class="ebook-size">💾 ۱۸ مگابایت</span>
+                                </div>
+                                <div class="ebook-price-box">
+                                    <span class="ebook-price">۱۲۰,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۳ -->
+                    <div class="swiper-slide">
+                        <div class="ebook-card">
+                            <div class="ebook-image">
+                                <span class="ebook-badge">🔥 پرفروش</span>
+                                <span class="ebook-rank">#۳</span>
+                                <span class="ebook-format">PDF</span>
+                                <img src="https://via.placeholder.com/300x380/e8998d/ffffff?text=Novel" alt="رمان">
+                                <button class="preview-btn" title="پیش‌نمایش">👁️</button>
+                            </div>
+                            <div class="ebook-info">
+                                <div class="ebook-category">📕 رمان و داستان</div>
+                                <h3 class="ebook-title">رمان بادی که در باد رفت</h3>
+                                <div class="ebook-author">✍️ نویسنده: مریم حسینی</div>
+                                <div class="ebook-meta">
+                                    <span class="ebook-pages">📄 ۲۸۰ صفحه</span>
+                                    <span class="ebook-size">💾 ۱۲ مگابایت</span>
+                                </div>
+                                <div class="ebook-price-box">
+                                    <span class="ebook-price">۶۵,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۴ -->
+                    <div class="swiper-slide">
+                        <div class="ebook-card">
+                            <div class="ebook-image">
+                                <span class="ebook-badge">🔥 پرفروش</span>
+                                <span class="ebook-rank">#۴</span>
+                                <span class="ebook-format">PDF</span>
+                                <img src="https://via.placeholder.com/300x380/3b82f6/ffffff?text=Notes" alt="جزوه">
+                                <button class="preview-btn" title="پیش‌نمایش">👁️</button>
+                            </div>
+                            <div class="ebook-info">
+                                <div class="ebook-category">📝 جزوه دانشگاهی</div>
+                                <h3 class="ebook-title">جزوه کامل ریاضی مهندسی</h3>
+                                <div class="ebook-author">✍️ نویسنده: دکتر احمدی</div>
+                                <div class="ebook-meta">
+                                    <span class="ebook-pages">📄 ۱۸۰ صفحه</span>
+                                    <span class="ebook-size">💾 ۸ مگابایت</span>
+                                </div>
+                                <div class="ebook-price-box">
+                                    <span class="ebook-price">۴۵,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۵ -->
+                    <div class="swiper-slide">
+                        <div class="ebook-card">
+                            <div class="ebook-image">
+                                <span class="ebook-badge">🔥 پرفروش</span>
+                                <span class="ebook-rank">#۵</span>
+                                <span class="ebook-format">PDF</span>
+                                <img src="https://via.placeholder.com/300x380/60a5fa/ffffff?text=Design" alt="طراحی">
+                                <button class="preview-btn" title="پیش‌نمایش">👁️</button>
+                            </div>
+                            <div class="ebook-info">
+                                <div class="ebook-category">🎨 کتاب هنری</div>
+                                <h3 class="ebook-title">اصول طراحی گرافیک مدرن</h3>
+                                <div class="ebook-author">✍️ نویسنده: آرمان موسوی</div>
+                                <div class="ebook-meta">
+                                    <span class="ebook-pages">📄 ۲۲۰ صفحه</span>
+                                    <span class="ebook-size">💾 ۳۵ مگابایت</span>
+                                </div>
+                                <div class="ebook-price-box">
+                                    <span class="ebook-price">۸۰,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- کارت ۶ -->
+                    <div class="swiper-slide">
+                        <div class="ebook-card">
+                            <div class="ebook-image">
+                                <span class="ebook-badge">🔥 پرفروش</span>
+                                <span class="ebook-rank">#۶</span>
+                                <span class="ebook-format">PDF</span>
+                                <img src="https://via.placeholder.com/300x380/1e3a8a/ffffff?text=Business"
+                                    alt="کسب و کار">
+                                <button class="preview-btn" title="پیش‌نمایش">👁️</button>
+                            </div>
+                            <div class="ebook-info">
+                                <div class="ebook-category">💼 کتاب کسب و کار</div>
+                                <h3 class="ebook-title">راهنمای جامع استارتاپ</h3>
+                                <div class="ebook-author">✍️ نویسنده: علی محمدی</div>
+                                <div class="ebook-meta">
+                                    <span class="ebook-pages">📄 ۳۵۰ صفحه</span>
+                                    <span class="ebook-size">💾 ۲۰ مگابایت</span>
+                                </div>
+                                <div class="ebook-price-box">
+                                    <span class="ebook-price">۱۱۰,۰۰۰ <small>تومان</small></span>
+                                    <button class="btn-cart-modern">
+                                        <span class="cart-icon">🛒</span>
+                                        <span class="cart-text">افزودن به سبد</span>
+                                        <span class="cart-ripple"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
     <!-- ========================================  بخش پربازدیدترین محصولات (تب‌دار)  ======================================== -->
     <section class="trending-section">
         <div class="container">
@@ -62,8 +480,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۱</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=Web+Design"
-                                    alt="طراحی وب">
+                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=Web+Design" alt="طراحی وب">
                                 <span class="trending-badge">🔥 داغ</span>
                             </div>
                             <div class="trending-info">
@@ -123,8 +540,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۳</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/e8998d/ffffff?text=Podcast"
-                                    alt="پادکست">
+                                <img src="https://via.placeholder.com/150x150/e8998d/ffffff?text=Podcast" alt="پادکست">
                             </div>
                             <div class="trending-info">
                                 <div class="trending-category">🎵 فایل صوتی</div>
@@ -153,8 +569,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۴</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/3b82f6/ffffff?text=UI+UX"
-                                    alt="UI/UX">
+                                <img src="https://via.placeholder.com/150x150/3b82f6/ffffff?text=UI+UX" alt="UI/UX">
                             </div>
                             <div class="trending-info">
                                 <div class="trending-category">🎬 فایل تصویری</div>
@@ -183,8 +598,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۵</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/60a5fa/ffffff?text=Novel"
-                                    alt="رمان">
+                                <img src="https://via.placeholder.com/150x150/60a5fa/ffffff?text=Novel" alt="رمان">
                             </div>
                             <div class="trending-info">
                                 <div class="trending-category">📄 فایل PDF</div>
@@ -306,8 +720,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۳</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=Startup"
-                                    alt="استارتاپ">
+                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=Startup" alt="استارتاپ">
                             </div>
                             <div class="trending-info">
                                 <div class="trending-category">📄 فایل PDF</div>
@@ -364,8 +777,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۵</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/60a5fa/ffffff?text=English"
-                                    alt="زبان">
+                                <img src="https://via.placeholder.com/150x150/60a5fa/ffffff?text=English" alt="زبان">
                             </div>
                             <div class="trending-info">
                                 <div class="trending-category">🎵 فایل صوتی</div>
@@ -393,8 +805,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۶</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/e8998d/ffffff?text=Music"
-                                    alt="موسیقی">
+                                <img src="https://via.placeholder.com/150x150/e8998d/ffffff?text=Music" alt="موسیقی">
                             </div>
                             <div class="trending-info">
                                 <div class="trending-category">🎵 فایل صوتی</div>
@@ -427,8 +838,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۱</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=React"
-                                    alt="React">
+                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=React" alt="React">
                                 <span class="trending-badge">🔥 داغ</span>
                             </div>
                             <div class="trending-info">
@@ -573,8 +983,7 @@
                         <div class="trending-card">
                             <div class="trending-rank">۶</div>
                             <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=Design"
-                                    alt="طراحی">
+                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=Design" alt="طراحی">
                             </div>
                             <div class="trending-info">
                                 <div class="trending-category">🎨 کتاب هنری</div>
@@ -891,8 +1300,7 @@
                             <div class="audio-image">
                                 <span class="audio-badge">🔥 پرفروش</span>
                                 <span class="audio-rank">#۴</span>
-                                <img src="https://via.placeholder.com/300x300/3b82f6/ffffff?text=Music"
-                                    alt="موسیقی">
+                                <img src="https://via.placeholder.com/300x300/3b82f6/ffffff?text=Music" alt="موسیقی">
                                 <button class="play-btn" title="پیش‌نمایش">▶</button>
                             </div>
                             <div class="audio-info">
@@ -921,8 +1329,7 @@
                             <div class="audio-image">
                                 <span class="audio-badge">🔥 پرفروش</span>
                                 <span class="audio-rank">#۵</span>
-                                <img src="https://via.placeholder.com/300x300/60a5fa/ffffff?text=Tutorial"
-                                    alt="آموزش">
+                                <img src="https://via.placeholder.com/300x300/60a5fa/ffffff?text=Tutorial" alt="آموزش">
                                 <button class="play-btn" title="پیش‌نمایش">▶</button>
                             </div>
                             <div class="audio-info">
@@ -951,8 +1358,7 @@
                             <div class="audio-image">
                                 <span class="audio-badge">🔥 پرفروش</span>
                                 <span class="audio-rank">#۶</span>
-                                <img src="https://via.placeholder.com/300x300/1e3a8a/ffffff?text=Story"
-                                    alt="داستان">
+                                <img src="https://via.placeholder.com/300x300/1e3a8a/ffffff?text=Story" alt="داستان">
                                 <button class="play-btn" title="پیش‌نمایش">▶</button>
                             </div>
                             <div class="audio-info">
@@ -1072,8 +1478,7 @@
                                 <span class="ebook-badge">🔥 پرفروش</span>
                                 <span class="ebook-rank">#۳</span>
                                 <span class="ebook-format">PDF</span>
-                                <img src="https://via.placeholder.com/300x380/e8998d/ffffff?text=Novel"
-                                    alt="رمان">
+                                <img src="https://via.placeholder.com/300x380/e8998d/ffffff?text=Novel" alt="رمان">
                                 <button class="preview-btn" title="پیش‌نمایش">👁️</button>
                             </div>
                             <div class="ebook-info">
@@ -1103,8 +1508,7 @@
                                 <span class="ebook-badge">🔥 پرفروش</span>
                                 <span class="ebook-rank">#۴</span>
                                 <span class="ebook-format">PDF</span>
-                                <img src="https://via.placeholder.com/300x380/3b82f6/ffffff?text=Notes"
-                                    alt="جزوه">
+                                <img src="https://via.placeholder.com/300x380/3b82f6/ffffff?text=Notes" alt="جزوه">
                                 <button class="preview-btn" title="پیش‌نمایش">👁️</button>
                             </div>
                             <div class="ebook-info">
@@ -1134,8 +1538,7 @@
                                 <span class="ebook-badge">🔥 پرفروش</span>
                                 <span class="ebook-rank">#۵</span>
                                 <span class="ebook-format">PDF</span>
-                                <img src="https://via.placeholder.com/300x380/60a5fa/ffffff?text=Design"
-                                    alt="طراحی">
+                                <img src="https://via.placeholder.com/300x380/60a5fa/ffffff?text=Design" alt="طراحی">
                                 <button class="preview-btn" title="پیش‌نمایش">👁️</button>
                             </div>
                             <div class="ebook-info">
@@ -1207,7 +1610,7 @@
 
 
     <!-- ========================================  اسلایدر پرفروش‌ترین فایل‌های تصویری  ======================================== -->
-    <section class="video-slider-section">
+    {{-- <section class="video-slider-section">
         <div class="container">
 
             <!-- هدر بخش -->
@@ -1258,8 +1661,7 @@
                                 <span class="video-badge">🔥 پرفروش</span>
                                 <span class="video-rank">#۲</span>
                                 <span class="video-duration">۱۸:۳۰</span>
-                                <img src="https://via.placeholder.com/400x250/2563eb/ffffff?text=UI+UX"
-                                    alt="UI/UX">
+                                <img src="https://via.placeholder.com/400x250/2563eb/ffffff?text=UI+UX" alt="UI/UX">
                                 <button class="play-btn-video" title="پیش‌نمایش">▶</button>
                             </div>
                             <div class="video-info">
@@ -1289,8 +1691,7 @@
                                 <span class="video-badge">🔥 پرفروش</span>
                                 <span class="video-rank">#۳</span>
                                 <span class="video-duration">۲۵:۱۰</span>
-                                <img src="https://via.placeholder.com/400x250/e8998d/ffffff?text=React"
-                                    alt="React">
+                                <img src="https://via.placeholder.com/400x250/e8998d/ffffff?text=React" alt="React">
                                 <button class="play-btn-video" title="پیش‌نمایش">▶</button>
                             </div>
                             <div class="video-info">
@@ -1417,8 +1818,5 @@
 
             </div>
         </div>
-    </section>
-
-
-
+    </section> --}}
 @endsection

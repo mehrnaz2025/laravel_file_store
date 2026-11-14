@@ -13,13 +13,13 @@
     @include('app.layouts.partials.header')
 
 
-    @yield('content')
+         @yield('content')
 
     <!-- 7. Footer -->
 
-@include('app.layouts.partials.footer')
+    @include('app.layouts.partials.footer')
 
-@include('app.layouts.scripts')
+    @include('app.layouts.scripts')
 
 
 
