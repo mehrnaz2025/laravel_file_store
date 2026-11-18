@@ -11,7 +11,9 @@ return new class extends Migration
     {
         Schema::create('product_views', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('user_id')->nullable()->constrained('users');
+            $table->string('ip_address', 45);
             $table->timestamp('viewed_at');
             $table->timestamps();
         });
