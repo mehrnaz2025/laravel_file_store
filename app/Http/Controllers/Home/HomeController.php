@@ -18,9 +18,9 @@ class HomeController extends Controller{
                                         })->latest()->limit('8')->get();
 
           $newestPdfProducts= Product::query()->where('status', 1)->where('marketable', 1)
-                                      ->where('files',function ($query) {
-                                                $query->whereIn('type',6);
-                                        })->latest()->limit('8')->get();
+                                      ->whereHas('files',function ($query) {
+                                                $query->where('type',6);
+                                        })->latest()->limit(8)->get();
 
 
           $bestSellingAudio=Product::query()->where('status', 1)->where('marketable', 1)

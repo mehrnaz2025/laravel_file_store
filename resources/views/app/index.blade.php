@@ -831,182 +831,42 @@
                         </div>
                     </div>
                 </div>
-
+{{-- $mostViewedThisMonth --}}
                 <!-- تب ماه -->
                 <div class="tab-pane" id="tab-month">
                     <div class="trending-grid">
-                        <div class="trending-card">
-                            <div class="trending-rank">۱</div>
-                            <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=React" alt="React">
-                                <span class="trending-badge">🔥 داغ</span>
-                            </div>
-                            <div class="trending-info">
-                                <div class="trending-category">🎬 فایل تصویری</div>
-                                <h3 class="trending-title">دوره جامع React و Next.js</h3>
-                                <div class="trending-stats">
-                                    <span class="trending-views">👁️ ۳۲,۵۰۰ بازدید</span>
-                                    <span class="trending-trend">📈 +۲,۱۰۰</span>
+                       @forelse ($mostViewedThisMonth as $key=>$month)
+                            <div class="trending-card">
+                                <div class="trending-rank">{{  fa($key + 1)  }}</div>
+                                <div class="trending-image">
+                                    <img src="{{ asset($month->image) }}" alt="{{ $month->name }}">
+                                    <span class="trending-badge">🔥 داغ</span>
                                 </div>
-                                <div class="trending-popularity">
-                                    <div class="popularity-bar">
-                                        <div class="popularity-fill" style="width: 99%"></div>
+                                <div class="trending-info">
+                                    <div class="trending-category">🎬 فایل تصویری</div>
+                                    <h3 class="trending-title"> <a href="#">{{ $month->name }} </a> </h3>
+                                    <div class="trending-stats">
+                                        <span class="trending-views">👁️ {{ $month->views()->count() }} بازدید</span>
+                                        <span class="trending-trend">📈 +۲,۱۰۰</span>
                                     </div>
-                                </div>
-                                <div class="trending-footer">
-                                    <span class="trending-price">۴۵۰,۰۰۰ <small>تومان</small></span>
-                                    <button class="btn-cart-modern">
-                                        <span class="cart-icon">🛒</span>
-                                        <span class="cart-text">افزودن به سبد</span>
-                                        <span class="cart-ripple"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                                    <div class="trending-popularity">
+                                        <div class="popularity-bar">
+                                            <div class="popularity-fill" style="width: 99%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="trending-footer">
+                                        <span class="trending-price">  {{ fa($month->price)}}  <small>تومان</small></span>
 
-                        <div class="trending-card">
-                            <div class="trending-rank">۲</div>
-                            <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/2563eb/ffffff?text=Data+Science"
-                                    alt="علم داده">
-                            </div>
-                            <div class="trending-info">
-                                <div class="trending-category">📄 فایل PDF</div>
-                                <h3 class="trending-title">کتاب علم داده با پایتون</h3>
-                                <div class="trending-stats">
-                                    <span class="trending-views">👁️ ۲۸,۹۰۰ بازدید</span>
-                                    <span class="trending-trend">📈 +۱,۸۵۰</span>
-                                </div>
-                                <div class="trending-popularity">
-                                    <div class="popularity-bar">
-                                        <div class="popularity-fill" style="width: 92%"></div>
                                     </div>
                                 </div>
-                                <div class="trending-footer">
-                                    <span class="trending-price">۱۵۰,۰۰۰ <small>تومان</small></span>
-                                    <button class="btn-cart-modern">
-                                        <span class="cart-icon">🛒</span>
-                                        <span class="cart-text">افزودن به سبد</span>
-                                        <span class="cart-ripple"></span>
-                                    </button>
-                                </div>
                             </div>
-                        </div>
+                       @empty
+                            <div class="col-span-full text-center py-8 text-gray-500">هنوز بازدیدی برای این ماه ثبت نشده است.</div>
+                       @endforelse
 
-                        <div class="trending-card">
-                            <div class="trending-rank">۳</div>
-                            <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/e8998d/ffffff?text=Audiobook"
-                                    alt="کتاب صوتی">
-                            </div>
-                            <div class="trending-info">
-                                <div class="trending-category">🎵 فایل صوتی</div>
-                                <h3 class="trending-title">کتاب صوتی عادت‌های اتمی</h3>
-                                <div class="trending-stats">
-                                    <span class="trending-views">👁️ ۲۵,۴۰۰ بازدید</span>
-                                    <span class="trending-trend">📈 +۱,۶۰۰</span>
-                                </div>
-                                <div class="trending-popularity">
-                                    <div class="popularity-bar">
-                                        <div class="popularity-fill" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                                <div class="trending-footer">
-                                    <span class="trending-price">۸۵,۰۰۰ <small>تومان</small></span>
-                                    <button class="btn-cart-modern">
-                                        <span class="cart-icon">🛒</span>
-                                        <span class="cart-text">افزودن به سبد</span>
-                                        <span class="cart-ripple"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="trending-card">
-                            <div class="trending-rank">۴</div>
-                            <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/3b82f6/ffffff?text=Video+Edit"
-                                    alt="ویرایش ویدیو">
-                            </div>
-                            <div class="trending-info">
-                                <div class="trending-category">🎬 فایل تصویری</div>
-                                <h3 class="trending-title">آموزش پریمیر و افتر افکت</h3>
-                                <div class="trending-stats">
-                                    <span class="trending-views">👁️ ۲۲,۱۰۰ بازدید</span>
-                                    <span class="trending-trend">📈 +۱,۴۰۰</span>
-                                </div>
-                                <div class="trending-popularity">
-                                    <div class="popularity-bar">
-                                        <div class="popularity-fill" style="width: 78%"></div>
-                                    </div>
-                                </div>
-                                <div class="trending-footer">
-                                    <span class="trending-price">۳۸۰,۰۰۰ <small>تومان</small></span>
-                                    <button class="btn-cart-modern">
-                                        <span class="cart-icon">🛒</span>
-                                        <span class="cart-text">افزودن به سبد</span>
-                                        <span class="cart-ripple"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="trending-card">
-                            <div class="trending-rank">۵</div>
-                            <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/60a5fa/ffffff?text=Business"
-                                    alt="کسب و کار">
-                            </div>
-                            <div class="trending-info">
-                                <div class="trending-category">📄 فایل PDF</div>
-                                <h3 class="trending-title">اصول مدیریت کسب و کار</h3>
-                                <div class="trending-stats">
-                                    <span class="trending-views">👁️ ۱۹,۸۰۰ بازدید</span>
-                                    <span class="trending-trend">📈 +۱,۲۰۰</span>
-                                </div>
-                                <div class="trending-popularity">
-                                    <div class="popularity-bar">
-                                        <div class="popularity-fill" style="width: 70%"></div>
-                                    </div>
-                                </div>
-                                <div class="trending-footer">
-                                    <span class="trending-price">۹۵,۰۰۰ <small>تومان</small></span>
-                                    <button class="btn-cart-modern">
-                                        <span class="cart-icon">🛒</span>
-                                        <span class="cart-text">افزودن به سبد</span>
-                                        <span class="cart-ripple"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="trending-card">
-                            <div class="trending-rank">۶</div>
-                            <div class="trending-image">
-                                <img src="https://via.placeholder.com/150x150/1e3a8a/ffffff?text=Design" alt="طراحی">
-                            </div>
-                            <div class="trending-info">
-                                <div class="trending-category">🎨 کتاب هنری</div>
-                                <h3 class="trending-title">اصول طراحی گرافیک مدرن</h3>
-                                <div class="trending-stats">
-                                    <span class="trending-views">👁️ ۱۷,۵۰۰ بازدید</span>
-                                    <span class="trending-trend">📈 +۱,۰۵۰</span>
-                                </div>
-                                <div class="trending-popularity">
-                                    <div class="popularity-bar">
-                                        <div class="popularity-fill" style="width: 63%"></div>
-                                    </div>
-                                </div>
-                                <div class="trending-footer">
-                                    <span class="trending-price">۸۰,۰۰۰ <small>تومان</small></span>
-                                    <button class="btn-cart-modern">
-                                        <span class="cart-icon">🛒</span>
-                                        <span class="cart-text">افزودن به سبد</span>
-                                        <span class="cart-ripple"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 

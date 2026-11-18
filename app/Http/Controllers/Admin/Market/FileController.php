@@ -13,7 +13,7 @@ class FileController extends Controller
 {
 
     public function index(Product $product){
-            $files=File::query()->orderBy('number','ASC')->paginate(5);
+            $files=File::query()->where('product_id',$product->id)->orderBy('number','ASC')->paginate(5);
             return view('admin.market.product.file-product.index',compact('files','product'));
     }
 
